@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pressure Control - Smart Blood Pressure Monitoring</title>
+    <title>Pressure Control - Monitoraggio Intelligente della Pressione</title>
     
-    <meta name="description" content="Track blood pressure, stress and sleep with Apple Health and Apple Watch integration. Clear charts, history, and weekly AI-generated reports." />
+    <meta name="description" content="Monitora pressione sanguigna, stress e sonno con integrazione Apple Health e Apple Watch. Grafici chiari, cronologia e report IA settimanali." />
     <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
     
-    <link rel="icon" href="assets/favicon.png" />
+    <link rel="icon" href="../assets/favicon.png" />
     
-    <meta property="og:title" content="Pressure Control - Smart Blood Pressure Monitoring" />
-    <meta property="og:description" content="Track blood pressure, stress and sleep with Apple Health and Apple Watch integration. Clear charts, history, and weekly AI-generated reports." />
-    <meta property="og:image" content="assets/og-image.png" />
+    <meta property="og:title" content="Pressure Control - Monitoraggio Intelligente della Pressione" />
+    <meta property="og:description" content="Monitora pressione sanguigna, stress e sonno con integrazione Apple Health e Apple Watch." />
+    <meta property="og:image" content="../assets/og-image.png" />
 
-    <link rel="canonical" href="https://litoarias.github.io/landing-pressure-control/" />
+    <link rel="canonical" href="https://litoarias.github.io/landing-pressure-control/it/" />
     <link rel="alternate" hreflang="en" href="https://litoarias.github.io/landing-pressure-control/" />
     <link rel="alternate" hreflang="es" href="https://litoarias.github.io/landing-pressure-control/es/" />
     <link rel="alternate" hreflang="fr" href="https://litoarias.github.io/landing-pressure-control/fr/" />
@@ -29,71 +29,43 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="assets/style.css" />
-
-    <script>
-        (function () {
-            const supported = ["en", "es", "fr", "de", "it", "ja", "zh"];
-            const stored = localStorage.getItem("pc_lang");
-            const fromStorage = supported.includes(stored) ? stored : null;
-            const navLangs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || "en"];
-            let fromBrowser = "en";
-
-            for (let i = 0; i < navLangs.length; i += 1) {
-                const candidate = String(navLangs[i]).toLowerCase().split("-")[0];
-                if (supported.includes(candidate)) {
-                    fromBrowser = candidate;
-                    break;
-                }
-            }
-
-            const target = fromStorage || fromBrowser;
-            if (target === "en") {
-                return;
-            }
-
-            const targetUrl = new URL("./" + target + "/index.html", window.location.href);
-            if (targetUrl.href !== window.location.href) {
-                window.location.replace(targetUrl.href);
-            }
-        })();
-    </script>
+    <link rel="stylesheet" href="../assets/style.css" />
 </head>
 <body>
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav__container">
             <a href="./index.html" class="nav__logo">
-                <img src="content/image/xjf2048aaxk5vkiasgrz.jpg" alt="Pressure Control" class="nav__logo-img" />
+                <img src="../content/image/xjf2048aaxk5vkiasgrz.jpg" alt="Pressure Control" class="nav__logo-img" />
                 <span class="nav__logo-text">Pressure Control</span>
             </a>
             <div class="nav__links">
-                <a href="#features" class="nav__link">Features</a>
-                <a href="#screenshots" class="nav__link">Screenshots</a>
-                <a href="#pricing" class="nav__link">Pricing</a>
+                <a href="#features" class="nav__link">Funzionalita</a>
+                <a href="#screenshots" class="nav__link">Screenshot</a>
+                <a href="#pricing" class="nav__link">Prezzi</a>
                 <div class="nav__lang">
-                    <button class="nav__lang-btn" aria-label="Change language" type="button">
+                    <button class="nav__lang-btn" aria-label="Cambia lingua" type="button">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <circle cx="12" cy="12" r="10"/>
                             <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
                         </svg>
-                        EN
+                        IT
                     </button>
                     <div class="nav__lang-dropdown">
-                        <a href="./index.html" class="nav__lang-option nav__lang-option--active">English</a>
-                        <a href="./es/index.html" class="nav__lang-option">Espanol</a>
-                        <a href="./fr/index.html" class="nav__lang-option">Francais</a>
-                        <a href="./de/index.html" class="nav__lang-option">Deutsch</a>
-                        <a href="./it/index.html" class="nav__lang-option">Italiano</a>
-                        <a href="./ja/index.html" class="nav__lang-option">Japanese</a>
-                        <a href="./zh/index.html" class="nav__lang-option">Chinese</a>
+                        <a href="../index.html" class="nav__lang-option">English</a>
+                        <a href="../es/index.html" class="nav__lang-option">Espanol</a>
+                        <a href="../fr/index.html" class="nav__lang-option">Francais</a>
+                        <a href="../de/index.html" class="nav__lang-option">Deutsch</a>
+                        <a href="../it/index.html" class="nav__lang-option nav__lang-option--active">Italiano</a>
+                        <a href="../ja/index.html" class="nav__lang-option">Japanese</a>
+                        <a href="../zh/index.html" class="nav__lang-option">Chinese</a>
                     </div>
                 </div>
                 <a href="https://apps.apple.com/us/app/pressure-control-tracker/id6738280822" class="nav__cta" target="_blank">
-                    Download
+                    Scarica
                 </a>
             </div>
-            <button class="nav__mobile-toggle" aria-label="Toggle menu">
+            <button class="nav__mobile-toggle" aria-label="Apri menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -112,48 +84,48 @@
             <div class="hero__content">
                 <div class="hero__badge">
                     <span class="hero__badge-dot"></span>
-                    Health & Wellness
+                    Salute e Benessere
                 </div>
                 <h1 class="hero__title">
-                    Take Control of Your
-                    <span class="hero__title-gradient">Blood Pressure</span>
+                    Prendi il Controllo della Tua
+                    <span class="hero__title-gradient">Pressione Sanguigna</span>
                 </h1>
                 <p class="hero__subtitle">
-                    Monitor blood pressure, stress, and sleep in one intelligent app. 
-                    Seamlessly synced with Apple Health and Apple Watch.
+                    Monitora pressione sanguigna, stress e sonno in un'app intelligente. 
+                    Sincronizzata con Apple Health e Apple Watch.
                 </p>
                 <div class="hero__actions">
                     <a href="https://apps.apple.com/us/app/pressure-control-tracker/id6738280822" class="btn btn--primary" target="_blank">
                         <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
                         </svg>
-                        Download for iOS
+                        Scarica per iOS
                     </a>
                     <a href="#features" class="btn btn--secondary">
-                        Learn More
+                        Scopri di Piu
                     </a>
                 </div>
                 <div class="hero__stats">
                     <div class="hero__stat">
                         <span class="hero__stat-value">5.0</span>
-                        <span class="hero__stat-label">App Store Rating</span>
+                        <span class="hero__stat-label">Valutazione App Store</span>
                     </div>
                     <div class="hero__stat-divider"></div>
                     <div class="hero__stat">
                         <span class="hero__stat-value">7</span>
-                        <span class="hero__stat-label">Languages</span>
+                        <span class="hero__stat-label">Lingue</span>
                     </div>
                     <div class="hero__stat-divider"></div>
                     <div class="hero__stat">
                         <span class="hero__stat-value">v1.11</span>
-                        <span class="hero__stat-label">Latest Version</span>
+                        <span class="hero__stat-label">Ultima Versione</span>
                     </div>
                 </div>
             </div>
             <div class="hero__visual">
                 <div class="hero__phone">
                     <div class="hero__phone-frame">
-                        <img src="content/image/eruy1h8m5gm5fyy31j3.jpeg" alt="Pressure Control App Screenshot" class="hero__phone-screen" />
+                        <img src="../content/image/eruy1h8m5gm5fyy31j3.jpeg" alt="Screenshot Pressure Control" class="hero__phone-screen" />
                     </div>
                 </div>
             </div>
@@ -164,10 +136,10 @@
     <section id="features" class="features">
         <div class="features__container">
             <div class="features__header">
-                <span class="features__label">Features</span>
-                <h2 class="features__title">Everything you need to<br />monitor your health</h2>
+                <span class="features__label">Funzionalita</span>
+                <h2 class="features__title">Tutto cio di cui hai bisogno per<br />monitorare la tua salute</h2>
                 <p class="features__description">
-                    Comprehensive health tracking designed with precision and simplicity in mind.
+                    Monitoraggio della salute completo progettato con precisione e semplicita.
                 </p>
             </div>
             <div class="features__grid">
@@ -177,8 +149,8 @@
                             <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
                         </svg>
                     </div>
-                    <h3 class="feature-card__title">Real-time Monitoring</h3>
-                    <p class="feature-card__text">Track your blood pressure and heart rate with medical-grade accuracy in real-time.</p>
+                    <h3 class="feature-card__title">Monitoraggio in Tempo Reale</h3>
+                    <p class="feature-card__text">Traccia la tua pressione sanguigna e frequenza cardiaca con precisione medica in tempo reale.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-card__icon">
@@ -187,8 +159,8 @@
                             <path d="M12 6v6l4 2"/>
                         </svg>
                     </div>
-                    <h3 class="feature-card__title">Health History</h3>
-                    <p class="feature-card__text">Access your complete health history with detailed charts and trend analysis.</p>
+                    <h3 class="feature-card__title">Cronologia Salute</h3>
+                    <p class="feature-card__text">Accedi alla tua cronologia completa con grafici dettagliati e analisi delle tendenze.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-card__icon">
@@ -199,8 +171,8 @@
                             <line x1="3" y1="10" x2="21" y2="10"/>
                         </svg>
                     </div>
-                    <h3 class="feature-card__title">Apple Health Sync</h3>
-                    <p class="feature-card__text">Seamlessly sync with Apple Health and Apple Watch for unified health data.</p>
+                    <h3 class="feature-card__title">Sincronizzazione Apple Health</h3>
+                    <p class="feature-card__text">Sincronizza con Apple Health e Apple Watch per dati sanitari unificati.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-card__icon">
@@ -210,8 +182,8 @@
                             <path d="M2 12l10 5 10-5"/>
                         </svg>
                     </div>
-                    <h3 class="feature-card__title">AI-Powered Insights</h3>
-                    <p class="feature-card__text">Receive weekly AI-generated health reports with personalized recommendations.</p>
+                    <h3 class="feature-card__title">Analisi con IA</h3>
+                    <p class="feature-card__text">Ricevi report settimanali generati dall'IA con raccomandazioni personalizzate.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-card__icon">
@@ -220,8 +192,8 @@
                             <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
                         </svg>
                     </div>
-                    <h3 class="feature-card__title">Smart Alerts</h3>
-                    <p class="feature-card__text">Get notified about unusual patterns and important health changes.</p>
+                    <h3 class="feature-card__title">Avvisi Intelligenti</h3>
+                    <p class="feature-card__text">Ricevi notifiche su pattern insoliti e importanti cambiamenti della salute.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-card__icon">
@@ -232,8 +204,8 @@
                             <line x1="16" y1="17" x2="8" y2="17"/>
                         </svg>
                     </div>
-                    <h3 class="feature-card__title">Export Reports</h3>
-                    <p class="feature-card__text">Export your data to PDF or CSV to share with your healthcare provider.</p>
+                    <h3 class="feature-card__title">Esporta Report</h3>
+                    <p class="feature-card__text">Esporta i tuoi dati in PDF o CSV per condividerli con il tuo medico.</p>
                 </div>
             </div>
         </div>
@@ -243,25 +215,25 @@
     <section id="screenshots" class="screenshots">
         <div class="screenshots__container">
             <div class="screenshots__header">
-                <span class="screenshots__label">App Preview</span>
-                <h2 class="screenshots__title">See it in action</h2>
+                <span class="screenshots__label">Anteprima App</span>
+                <h2 class="screenshots__title">Guardala in azione</h2>
                 <p class="screenshots__description">
-                    Designed with care for an intuitive and beautiful experience.
+                    Progettata con cura per un'esperienza intuitiva e bella.
                 </p>
             </div>
             <div class="screenshots__carousel">
                 <div class="screenshots__track">
                     <div class="screenshot-card">
-                        <img src="content/image/eruy1h8m5gm5fyy31j3.jpeg" alt="Dashboard View" class="screenshot-card__img" />
+                        <img src="../content/image/eruy1h8m5gm5fyy31j3.jpeg" alt="Dashboard" class="screenshot-card__img" />
                     </div>
                     <div class="screenshot-card">
-                        <img src="content/image/w25g7l3phbv2t5i1jce.jpeg" alt="Health Charts" class="screenshot-card__img" />
+                        <img src="../content/image/w25g7l3phbv2t5i1jce.jpeg" alt="Grafici Salute" class="screenshot-card__img" />
                     </div>
                     <div class="screenshot-card">
-                        <img src="content/image/8i3n38wxf0xh0ama4yc.jpeg" alt="Tracking History" class="screenshot-card__img" />
+                        <img src="../content/image/8i3n38wxf0xh0ama4yc.jpeg" alt="Cronologia" class="screenshot-card__img" />
                     </div>
                     <div class="screenshot-card">
-                        <img src="content/image/u0ylt6tgfgceg8frl8t.jpeg" alt="AI Reports" class="screenshot-card__img" />
+                        <img src="../content/image/u0ylt6tgfgceg8frl8t.jpeg" alt="Report IA" class="screenshot-card__img" />
                     </div>
                 </div>
             </div>
@@ -272,19 +244,19 @@
     <section id="pricing" class="pricing">
         <div class="pricing__container">
             <div class="pricing__header">
-                <span class="pricing__label">Pricing</span>
-                <h2 class="pricing__title">Start for free</h2>
+                <span class="pricing__label">Prezzi</span>
+                <h2 class="pricing__title">Inizia gratis</h2>
                 <p class="pricing__description">
-                    Begin your health journey today. Upgrade anytime for advanced features.
+                    Inizia il tuo percorso di salute oggi. Passa alla versione premium quando vuoi.
                 </p>
             </div>
             <div class="pricing__cards pricing__cards--three">
                 <div class="pricing-card">
                     <div class="pricing-card__header">
-                        <h3 class="pricing-card__name">Free</h3>
+                        <h3 class="pricing-card__name">Gratuito</h3>
                         <div class="pricing-card__price">
                             <span class="pricing-card__amount">$0</span>
-                            <span class="pricing-card__period">forever</span>
+                            <span class="pricing-card__period">per sempre</span>
                         </div>
                     </div>
                     <ul class="pricing-card__features">
@@ -292,77 +264,77 @@
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                                 <polyline points="20 6 9 17 4 12"/>
                             </svg>
-                            Blood pressure & heart rate logging
+                            Registrazione pressione e frequenza cardiaca
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                                 <polyline points="20 6 9 17 4 12"/>
                             </svg>
-                            History with basic charts
+                            Cronologia con grafici base
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                                 <polyline points="20 6 9 17 4 12"/>
                             </svg>
-                            HealthKit & Apple Watch sync
+                            Sync HealthKit e Apple Watch
                         </li>
                     </ul>
                     <a href="https://apps.apple.com/us/app/pressure-control-tracker/id6738280822" class="pricing-card__btn pricing-card__btn--secondary" target="_blank">
-                        Get Started
+                        Inizia
                     </a>
                 </div>
                 <div class="pricing-card pricing-card--featured">
-                    <div class="pricing-card__badge">Best Value</div>
+                    <div class="pricing-card__badge">Miglior Valore</div>
                     <div class="pricing-card__header">
-                        <h3 class="pricing-card__name">Yearly</h3>
+                        <h3 class="pricing-card__name">Annuale</h3>
                         <div class="pricing-card__price">
                             <span class="pricing-card__amount">$14.99</span>
-                            <span class="pricing-card__period">/year</span>
+                            <span class="pricing-card__period">/anno</span>
                         </div>
-                        <span class="pricing-card__savings">Save 37%</span>
+                        <span class="pricing-card__savings">Risparmia 37%</span>
                     </div>
                     <ul class="pricing-card__features">
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                                 <polyline points="20 6 9 17 4 12"/>
                             </svg>
-                            Everything in Free
+                            Tutto del Gratuito
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                                 <polyline points="20 6 9 17 4 12"/>
                             </svg>
-                            Weekly AI health reports
+                            Report salute IA settimanali
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                                 <polyline points="20 6 9 17 4 12"/>
                             </svg>
-                            Pattern detection & alerts
+                            Rilevamento pattern e avvisi
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                                 <polyline points="20 6 9 17 4 12"/>
                             </svg>
-                            PDF & CSV export
+                            Esportazione PDF e CSV
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                                 <polyline points="20 6 9 17 4 12"/>
                             </svg>
-                            Stress & sleep analytics
+                            Analisi stress e sonno
                         </li>
                     </ul>
                     <a href="https://apps.apple.com/us/app/pressure-control-tracker/id6738280822" class="pricing-card__btn pricing-card__btn--primary" target="_blank">
-                        Subscribe Yearly
+                        Abbonati Annuale
                     </a>
                 </div>
                 <div class="pricing-card">
                     <div class="pricing-card__header">
-                        <h3 class="pricing-card__name">Monthly</h3>
+                        <h3 class="pricing-card__name">Mensile</h3>
                         <div class="pricing-card__price">
                             <span class="pricing-card__amount">$1.99</span>
-                            <span class="pricing-card__period">/month</span>
+                            <span class="pricing-card__period">/mese</span>
                         </div>
                     </div>
                     <ul class="pricing-card__features">
@@ -370,48 +342,48 @@
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                                 <polyline points="20 6 9 17 4 12"/>
                             </svg>
-                            Everything in Free
+                            Tutto del Gratuito
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                                 <polyline points="20 6 9 17 4 12"/>
                             </svg>
-                            Weekly AI health reports
+                            Report salute IA settimanali
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                                 <polyline points="20 6 9 17 4 12"/>
                             </svg>
-                            Pattern detection & alerts
+                            Rilevamento pattern e avvisi
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                                 <polyline points="20 6 9 17 4 12"/>
                             </svg>
-                            PDF & CSV export
+                            Esportazione PDF e CSV
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                                 <polyline points="20 6 9 17 4 12"/>
                             </svg>
-                            Stress & sleep analytics
+                            Analisi stress e sonno
                         </li>
                     </ul>
                     <a href="https://apps.apple.com/us/app/pressure-control-tracker/id6738280822" class="pricing-card__btn pricing-card__btn--secondary" target="_blank">
-                        Subscribe Monthly
+                        Abbonati Mensile
                     </a>
                 </div>
             </div>
             <div class="pricing__lifetime">
                 <div class="pricing__lifetime-content">
                     <div class="pricing__lifetime-info">
-                        <h3 class="pricing__lifetime-title">Lifetime Access</h3>
-                        <p class="pricing__lifetime-text">One-time payment, forever yours. No recurring fees.</p>
+                        <h3 class="pricing__lifetime-title">Accesso a Vita</h3>
+                        <p class="pricing__lifetime-text">Pagamento unico, tuo per sempre. Nessun costo ricorrente.</p>
                     </div>
                     <div class="pricing__lifetime-price">
                         <span class="pricing__lifetime-amount">$49.99</span>
                         <a href="https://apps.apple.com/us/app/pressure-control-tracker/id6738280822" class="btn btn--primary" target="_blank">
-                            Get Lifetime
+                            Ottieni a Vita
                         </a>
                     </div>
                 </div>
@@ -422,15 +394,15 @@
     <!-- Languages Section -->
     <section class="languages">
         <div class="languages__container">
-            <h3 class="languages__title">Available in 7 languages</h3>
+            <h3 class="languages__title">Disponibile in 7 lingue</h3>
             <div class="languages__list">
-                <a href="./index.html" class="languages__item languages__item--active">English</a>
-                <a href="./es/index.html" class="languages__item">Espanol</a>
-                <a href="./fr/index.html" class="languages__item">Francais</a>
-                <a href="./de/index.html" class="languages__item">Deutsch</a>
-                <a href="./it/index.html" class="languages__item">Italiano</a>
-                <a href="./ja/index.html" class="languages__item">Japanese</a>
-                <a href="./zh/index.html" class="languages__item">Chinese</a>
+                <a href="../index.html" class="languages__item">English</a>
+                <a href="../es/index.html" class="languages__item">Espanol</a>
+                <a href="../fr/index.html" class="languages__item">Francais</a>
+                <a href="../de/index.html" class="languages__item">Deutsch</a>
+                <a href="../it/index.html" class="languages__item languages__item--active">Italiano</a>
+                <a href="../ja/index.html" class="languages__item">Japanese</a>
+                <a href="../zh/index.html" class="languages__item">Chinese</a>
             </div>
         </div>
     </section>
@@ -439,13 +411,13 @@
     <section class="cta">
         <div class="cta__container">
             <div class="cta__content">
-                <h2 class="cta__title">Start your health journey today</h2>
-                <p class="cta__text">Download now and take the first step towards better health management.</p>
+                <h2 class="cta__title">Inizia oggi il tuo percorso di salute</h2>
+                <p class="cta__text">Scarica ora e fai il primo passo verso una migliore gestione della tua salute.</p>
                 <a href="https://apps.apple.com/us/app/pressure-control-tracker/id6738280822" class="btn btn--primary btn--large" target="_blank">
                     <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
                     </svg>
-                    Download for Free
+                    Scarica Gratis
                 </a>
             </div>
         </div>
@@ -456,57 +428,49 @@
         <div class="footer__container">
             <div class="footer__top">
                 <div class="footer__brand">
-                    <img src="content/image/xjf2048aaxk5vkiasgrz.jpg" alt="Pressure Control" class="footer__logo" />
+                    <img src="../content/image/xjf2048aaxk5vkiasgrz.jpg" alt="Pressure Control" class="footer__logo" />
                     <span class="footer__brand-name">Pressure Control</span>
-                    <p class="footer__tagline">Your health, simplified.</p>
+                    <p class="footer__tagline">La tua salute, semplificata.</p>
                 </div>
                 <div class="footer__links-group">
-                    <h4 class="footer__links-title">Product</h4>
-                    <a href="#features" class="footer__link">Features</a>
-                    <a href="#pricing" class="footer__link">Pricing</a>
-                    <a href="#screenshots" class="footer__link">Screenshots</a>
+                    <h4 class="footer__links-title">Prodotto</h4>
+                    <a href="#features" class="footer__link">Funzionalita</a>
+                    <a href="#pricing" class="footer__link">Prezzi</a>
+                    <a href="#screenshots" class="footer__link">Screenshot</a>
                 </div>
                 <div class="footer__links-group">
-                    <h4 class="footer__links-title">Legal</h4>
+                    <h4 class="footer__links-title">Legale</h4>
                     <a href="https://litoarias.github.io/pressurecontrol-privacy" class="footer__link">Privacy Policy</a>
-                    <a href="#" class="footer__link">Terms of Service</a>
+                    <a href="#" class="footer__link">Termini di Servizio</a>
                 </div>
             </div>
             <div class="footer__bottom">
                 <p class="footer__copyright">
-                    &copy; <script>document.write(new Date().getFullYear())</script><noscript>2025</noscript> Pressure Control. All rights reserved.
+                    &copy; <script>document.write(new Date().getFullYear())</script><noscript>2025</noscript> Pressure Control. Tutti i diritti riservati.
                 </p>
             </div>
         </div>
     </footer>
 
     <script>
-        localStorage.setItem('pc_lang', 'en');
+        localStorage.setItem('pc_lang', 'it');
 
-        // Mobile menu toggle
         const mobileToggle = document.querySelector('.nav__mobile-toggle');
         const navLinks = document.querySelector('.nav__links');
-        
         mobileToggle?.addEventListener('click', () => {
             navLinks?.classList.toggle('nav__links--active');
             mobileToggle.classList.toggle('nav__mobile-toggle--active');
         });
-
-        // Language dropdown
         const langBtn = document.querySelector('.nav__lang-btn');
         const langDropdown = document.querySelector('.nav__lang-dropdown');
-
         langBtn?.addEventListener('click', () => {
             langDropdown?.classList.toggle('nav__lang-dropdown--active');
         });
-
         document.addEventListener('click', (e) => {
             if (!e.target.closest('.nav__lang')) {
                 langDropdown?.classList.remove('nav__lang-dropdown--active');
             }
         });
-
-        // Persist language preference
         const getLanguageFromHref = (href) => {
             const absolute = new URL(href, window.location.href);
             const segments = absolute.pathname.split('/').filter(Boolean);
@@ -519,15 +483,12 @@
             }
             return 'en';
         };
-
         document.querySelectorAll('.nav__lang-option, .languages__item').forEach((link) => {
             link.addEventListener('click', () => {
-                const lang = getLanguageFromHref(link.getAttribute('href') || './index.html');
+                const lang = getLanguageFromHref(link.getAttribute('href') || '../index.html');
                 localStorage.setItem('pc_lang', lang);
             });
         });
-
-        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -536,12 +497,9 @@
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     navLinks?.classList.remove('nav__links--active');
                     mobileToggle?.classList.remove('nav__mobile-toggle--active');
-                    langDropdown?.classList.remove('nav__lang-dropdown--active');
                 }
             });
         });
-
-        // Navbar background on scroll
         const nav = document.querySelector('.nav');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
@@ -550,24 +508,13 @@
                 nav?.classList.remove('nav--scrolled');
             }
         });
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-in');
-                }
+                if (entry.isIntersecting) { entry.target.classList.add('animate-in'); }
             });
         }, observerOptions);
-
-        document.querySelectorAll('.feature-card, .pricing-card, .screenshot-card').forEach(el => {
-            observer.observe(el);
-        });
+        document.querySelectorAll('.feature-card, .pricing-card, .screenshot-card').forEach(el => { observer.observe(el); });
     </script>
 </body>
 </html>
