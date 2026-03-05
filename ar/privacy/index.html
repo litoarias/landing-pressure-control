@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>سياسة الخصوصية - Pressure Control</title>
+    <meta name="description" content="سياسة خصوصية Pressure Control — كيف نتعامل مع بياناتك الصحية وHealthKit وميزات الذكاء الاصطناعي الاختيارية." />
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <link rel="icon" href="../../assets/favicon.png" />
+    <link rel="canonical" href="https://litoarias.github.io/landing-pressure-control/ar/privacy/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://litoarias.github.io/landing-pressure-control/assets/style.css" />
+    <style>
+        body{font-family:'Noto Sans Arabic',var(--font-family)}
+        .policy-hero{padding:calc(var(--nav-height) + var(--spacing-3xl)) var(--spacing-xl) var(--spacing-3xl);text-align:center;position:relative;overflow:hidden}
+        .policy-hero__bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(6,182,212,.12) 0%,transparent 70%),radial-gradient(ellipse 50% 40% at 80% 100%,rgba(225,29,72,.08) 0%,transparent 60%);pointer-events:none}
+        .policy-hero__label{display:inline-flex;align-items:center;gap:var(--spacing-xs);padding:.35rem var(--spacing-md);font-size:var(--font-size-xs);font-weight:600;color:var(--color-accent);background:var(--color-accent-bg);border:1px solid rgba(6,182,212,.2);border-radius:var(--radius-full);margin-bottom:var(--spacing-lg)}
+        .policy-hero__title{font-family:'Noto Sans Arabic',var(--font-display);font-size:var(--font-size-4xl);font-weight:700;color:var(--color-text-primary);line-height:1.4;margin-bottom:var(--spacing-md)}
+        .policy-hero__subtitle{font-size:var(--font-size-lg);color:var(--color-text-secondary);max-width:560px;margin:0 auto;line-height:1.9}
+        .policy-content{max-width:800px;margin:0 auto;padding:var(--spacing-2xl) var(--spacing-xl) var(--spacing-4xl)}
+        .policy-toc{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--spacing-xl);margin-bottom:var(--spacing-2xl);box-shadow:var(--shadow-sm)}
+        .policy-toc__title{font-size:var(--font-size-sm);font-weight:700;color:var(--color-text-tertiary);margin-bottom:var(--spacing-md)}
+        .policy-toc__list{list-style:none;display:flex;flex-direction:column;gap:var(--spacing-xs)}
+        .policy-toc__list a{font-size:var(--font-size-sm);color:var(--color-text-secondary);text-decoration:none;transition:color var(--transition-fast);display:flex;align-items:center;gap:var(--spacing-sm)}
+        .policy-toc__list a:hover{color:var(--color-accent)}
+        .policy-toc__num{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;font-size:10px;font-weight:700;color:var(--color-accent);background:var(--color-accent-bg);border-radius:var(--radius-full);flex-shrink:0}
+        .policy-section{margin-bottom:var(--spacing-2xl);scroll-margin-top:calc(var(--nav-height) + var(--spacing-lg))}
+        .policy-section__header{display:flex;align-items:center;gap:var(--spacing-md);margin-bottom:var(--spacing-lg)}
+        .policy-section__icon{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-lg);flex-shrink:0}
+        .policy-section__icon svg{width:22px;height:22px}
+        .policy-section__icon--blue{background:rgba(6,182,212,.12);color:var(--color-accent)}
+        .policy-section__icon--rose{background:rgba(225,29,72,.1);color:#e11d48}
+        .policy-section__icon--amber{background:rgba(217,119,6,.1);color:#d97706}
+        .policy-section__icon--emerald{background:rgba(5,150,105,.1);color:#059669}
+        .policy-section__icon--purple{background:rgba(124,58,237,.1);color:#7c3aed}
+        .policy-section__icon--slate{background:rgba(100,116,139,.1);color:#64748b}
+        .policy-section__title{font-family:'Noto Sans Arabic',var(--font-display);font-size:var(--font-size-2xl);font-weight:700;color:var(--color-text-primary)}
+        .policy-section__body{color:var(--color-text-secondary);line-height:2;font-size:var(--font-size-base)}
+        .policy-section__body p{margin-bottom:var(--spacing-md)}
+        .policy-section__body p:last-child{margin-bottom:0}
+        .policy-section__body ul{list-style:none;display:flex;flex-direction:column;gap:var(--spacing-sm);margin-bottom:var(--spacing-md)}
+        .policy-section__body ul li{display:flex;align-items:flex-start;gap:var(--spacing-sm);padding-right:var(--spacing-sm)}
+        .policy-section__body ul li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--color-accent);flex-shrink:0;margin-top:.7em}
+        .policy-section__body a{color:var(--color-accent);text-decoration:underline;text-underline-offset:3px}
+        .policy-section__body a:hover{color:var(--color-accent-dark)}
+        .policy-section__body strong{color:var(--color-text-primary);font-weight:600}
+        .policy-card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--spacing-xl);margin-top:var(--spacing-md);box-shadow:var(--shadow-sm)}
+        .policy-card--highlight{border-color:rgba(6,182,212,.25);background:linear-gradient(135deg,rgba(6,182,212,.04),rgba(225,29,72,.03))}
+        .policy-card--warning{border-color:rgba(217,119,6,.25);background:rgba(217,119,6,.04)}
+        .policy-card__title{font-size:var(--font-size-base);font-weight:700;color:var(--color-text-primary);margin-bottom:var(--spacing-sm);display:flex;align-items:center;gap:var(--spacing-sm)}
+        .policy-card__title svg{width:18px;height:18px;flex-shrink:0}
+        .policy-card__title--accent{color:var(--color-accent)}
+        .policy-card__title--warning{color:#d97706}
+        .policy-data-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:var(--spacing-sm);margin-top:var(--spacing-md)}
+        .policy-data-item{background:var(--color-bg-secondary);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:var(--spacing-md);display:flex;align-items:flex-start;gap:var(--spacing-sm)}
+        .policy-data-item__icon{font-size:1.25rem;flex-shrink:0;line-height:1}
+        .policy-data-item__text{font-size:var(--font-size-sm);color:var(--color-text-secondary);line-height:1.7}
+        .policy-data-item__label{font-weight:600;color:var(--color-text-primary);display:block;margin-bottom:2px}
+        .policy-divider{height:1px;background:var(--color-border);margin:var(--spacing-2xl) 0}
+        .policy-badge{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;font-size:var(--font-size-xs);font-weight:700;border-radius:var(--radius-full)}
+        .policy-badge--optional{color:#059669;background:rgba(5,150,105,.1);border:1px solid rgba(5,150,105,.2)}
+        @media(max-width:640px){.policy-hero__title{font-size:var(--font-size-3xl)}.policy-content{padding:var(--spacing-xl) var(--spacing-md) var(--spacing-3xl)}.policy-data-grid{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav__container">
+            <a href="../../index.html" class="nav__logo">
+                <img src="../../content/image/xjf2048aaxk5vkiasgrz.jpg" alt="Pressure Control" class="nav__logo-img" />
+                <span class="nav__logo-text">Pressure Control</span>
+            </a>
+            <div class="nav__links">
+                <a href="../../ar/index.html#features" class="nav__link">الميزات</a>
+                <a href="../../ar/index.html#pricing" class="nav__link">الأسعار</a>
+                <a href="../../ar/support/index.html" class="nav__link">الدعم</a>
+                <div class="nav__lang">
+                    <button class="nav__lang-btn" aria-label="تغيير اللغة" type="button">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        AR
+                    </button>
+                    <div class="nav__lang-dropdown">
+                        <a href="../../privacy/index.html" class="nav__lang-option">English</a>
+                        <a href="../../ar/privacy/index.html" class="nav__lang-option nav__lang-option--active">العربية</a>
+                        <a href="../../zh/privacy/index.html" class="nav__lang-option">简体中文</a>
+                        <a href="../../zh-TW/privacy/index.html" class="nav__lang-option">繁體中文</a>
+                        <a href="../../fr/privacy/index.html" class="nav__lang-option">Français</a>
+                        <a href="../../de/privacy/index.html" class="nav__lang-option">Deutsch</a>
+                        <a href="../../it/privacy/index.html" class="nav__lang-option">Italiano</a>
+                        <a href="../../ja/privacy/index.html" class="nav__lang-option">日本語</a>
+                        <a href="../../ko/privacy/index.html" class="nav__lang-option">한국어</a>
+                        <a href="../../pt/privacy/index.html" class="nav__lang-option">Português</a>
+                        <a href="../../ru/privacy/index.html" class="nav__lang-option">Русский</a>
+                        <a href="../../es/privacy/index.html" class="nav__lang-option">Español</a>
+                    </div>
+                </div>
+                <a href="https://apps.apple.com/us/app/pressure-control-tracker/id6738280822" class="nav__cta" target="_blank">تحميل</a>
+            </div>
+            <button class="nav__mobile-toggle" aria-label="القائمة"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <section class="policy-hero">
+        <div class="policy-hero__bg"></div>
+        <div style="position:relative;">
+            <div class="policy-hero__label"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>القانونية والخصوصية</div>
+            <h1 class="policy-hero__title">سياسة الخصوصية</h1>
+            <p class="policy-hero__subtitle">آخر تحديث: 20 أبريل 2025. نحن نحترم خصوصيتك وندافع عن الشفافية في استخدام بياناتك.</p>
+        </div>
+    </section>
+
+    <main class="policy-content">
+        <nav class="policy-toc" aria-label="جدول المحتويات">
+            <p class="policy-toc__title">المحتويات</p>
+            <ul class="policy-toc__list">
+                <li><a href="#data-collected"><span class="policy-toc__num">1</span>البيانات التي نجمعها</a></li>
+                <li><a href="#healthkit"><span class="policy-toc__num">2</span>HealthKit والبيانات الصحية</a></li>
+                <li><a href="#openai"><span class="policy-toc__num">3</span>تقارير الذكاء الاصطناعي (OpenAI)</a></li>
+                <li><a href="#analytics"><span class="policy-toc__num">4</span>التحليلات وتقارير الأعطال</a></li>
+                <li><a href="#sharing"><span class="policy-toc__num">5</span>مشاركة البيانات</a></li>
+                <li><a href="#retention"><span class="policy-toc__num">6</span>الاحتفاظ بالبيانات والأمان</a></li>
+                <li><a href="#children"><span class="policy-toc__num">7</span>خصوصية الأطفال</a></li>
+                <li><a href="#rights"><span class="policy-toc__num">8</span>حقوقك</a></li>
+                <li><a href="#contact"><span class="policy-toc__num">9</span>اتصل بنا</a></li>
+            </ul>
+        </nav>
+
+        <div class="policy-section__body" style="margin-bottom:var(--spacing-2xl)">
+            <p>يطوّر Pressure Control هيبوليتو أرياس، المقيم في إسبانيا. تشرح سياسة الخصوصية هذه المعلومات التي نجمعها عند استخدامك لتطبيق iOS، وكيفية استخدامها، والخيارات المتاحة لك.</p>
+        </div>
+
+        <section class="policy-section" id="data-collected">
+            <div class="policy-section__header">
+                <div class="policy-section__icon policy-section__icon--blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+                <h2 class="policy-section__title">1. البيانات التي نجمعها</h2>
+            </div>
+            <div class="policy-section__body">
+                <p>نجمع نوعين من البيانات: المعلومات التي تقدمها مباشرةً والمعلومات التي يتم جمعها تلقائيًا.</p>
+                <div class="policy-card">
+                    <p class="policy-card__title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>البيانات المجمّعة تلقائيًا</p>
+                    <ul>
+                        <li>نوع الجهاز وإصدار نظام التشغيل وإصدار التطبيق</li>
+                        <li>مدة الجلسة وأنماط استخدام الميزات</li>
+                        <li>تقارير الأعطال ومعلومات التشخيص</li>
+                        <li>معرّفات أجهزة مجهولة الهوية (غير مرتبطة بهويتك)</li>
+                    </ul>
+                </div>
+                <div class="policy-card" style="margin-top:var(--spacing-md)">
+                    <p class="policy-card__title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>المعلومات التي تقدمها</p>
+                    <ul>
+                        <li>قراءات ضغط الدم التي تسجّلها يدويًا</li>
+                        <li>الملاحظات والسياق التي تضيفها لقياساتك</li>
+                        <li>إعدادات وتفضيلات التطبيق</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="policy-divider"></div>
+
+        <section class="policy-section" id="healthkit">
+            <div class="policy-section__header">
+                <div class="policy-section__icon policy-section__icon--rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+                <h2 class="policy-section__title">2. HealthKit والبيانات الصحية</h2>
+            </div>
+            <div class="policy-section__body">
+                <p>يتكامل Pressure Control مع Apple HealthKit لقراءة وعرض مقاييسك الصحية. نطلب الوصول فقط إلى أنواع البيانات الضرورية للوظائف الأساسية للتطبيق.</p>
+                <div class="policy-data-grid">
+                    <div class="policy-data-item"><span class="policy-data-item__icon">&#x2764;&#xFE0F;</span><div class="policy-data-item__text"><span class="policy-data-item__label">ضغط الدم</span>قراءات الانقباض والانبساط</div></div>
+                    <div class="policy-data-item"><span class="policy-data-item__icon">&#x1F493;</span><div class="policy-data-item__text"><span class="policy-data-item__label">معدل ضربات القلب</span>النبض أثناء النشاط</div></div>
+                    <div class="policy-data-item"><span class="policy-data-item__icon">&#x1FAC0;</span><div class="policy-data-item__text"><span class="policy-data-item__label">النبض أثناء الراحة</span>نبضة في الدقيقة أثناء الراحة</div></div>
+                    <div class="policy-data-item"><span class="policy-data-item__icon">&#x1F6B6;</span><div class="policy-data-item__text"><span class="policy-data-item__label">النبض أثناء المشي</span>متوسط النبض عند المشي</div></div>
+                    <div class="policy-data-item"><span class="policy-data-item__icon">&#x1F4CA;</span><div class="policy-data-item__text"><span class="policy-data-item__label">تقلب معدل القلب</span>HRV (SDNN)</div></div>
+                    <div class="policy-data-item"><span class="policy-data-item__icon">&#x1F504;</span><div class="policy-data-item__text"><span class="policy-data-item__label">تعافي القلب</span>التعافي دقيقة بعد التمرين</div></div>
+                    <div class="policy-data-item"><span class="policy-data-item__icon">&#x1FA78;</span><div class="policy-data-item__text"><span class="policy-data-item__label">الأكسجين في الدم</span>تشبع SpO&#x2082;</div></div>
+                    <div class="policy-data-item"><span class="policy-data-item__icon">&#x1F32C;&#xFE0F;</span><div class="policy-data-item__text"><span class="policy-data-item__label">معدل التنفس</span>أنفاس في الدقيقة</div></div>
+                    <div class="policy-data-item"><span class="policy-data-item__icon">&#x1F3C3;</span><div class="policy-data-item__text"><span class="policy-data-item__label">VO2 max</span>مستوى اللياقة القلبية التنفسية</div></div>
+                    <div class="policy-data-item"><span class="policy-data-item__icon">&#x1F634;</span><div class="policy-data-item__text"><span class="policy-data-item__label">النوم</span>المدة ومراحل الجودة</div></div>
+                    <div class="policy-data-item"><span class="policy-data-item__icon">&#x1F45F;</span><div class="policy-data-item__text"><span class="policy-data-item__label">الخطوات</span>عدد الخطوات اليومية</div></div>
+                    <div class="policy-data-item"><span class="policy-data-item__icon">&#x26A1;</span><div class="policy-data-item__text"><span class="policy-data-item__label">الطاقة النشطة</span>السعرات المحروقة أثناء النشاط</div></div>
+                    <div class="policy-data-item"><span class="policy-data-item__icon">&#x1F50B;</span><div class="policy-data-item__text"><span class="policy-data-item__label">الطاقة الأساسية</span>السعرات الأيضية أثناء الراحة</div></div>
+                    <div class="policy-data-item"><span class="policy-data-item__icon">&#x23F1;&#xFE0F;</span><div class="policy-data-item__text"><span class="policy-data-item__label">وقت التمرين</span>دقائق تمرين Apple</div></div>
+                    <div class="policy-data-item"><span class="policy-data-item__icon">&#x1F9D8;</span><div class="policy-data-item__text"><span class="policy-data-item__label">جلسات التأمل</span>اليقظة الذهنية والتأمل</div></div>
+                </div>
+                <div class="policy-card policy-card--highlight" style="margin-top:var(--spacing-lg)">
+                    <p class="policy-card__title policy-card__title--accent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>تبقى بياناتك الصحية على جهازك</p>
+                    <p>تُعالَج بيانات الصحة المقروءة من HealthKit وتُعرَض محليًا على جهازك. لا نرفع بياناتك الصحية الخام ولا نخزّنها على خوادمنا.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="policy-divider"></div>
+
+        <section class="policy-section" id="openai">
+            <div class="policy-section__header">
+                <div class="policy-section__icon policy-section__icon--purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+                <h2 class="policy-section__title">3. تقارير الذكاء الاصطناعي (OpenAI)</h2>
+            </div>
+            <div class="policy-section__body">
+                <p>يوفّر Pressure Control ميزة ذكاء اصطناعي اختيارية تُنشئ تقارير أسبوعية مخصصة للعافية باستخدام نماذج لغة OpenAI. <span class="policy-badge policy-badge--optional">اختياري</span></p>
+                <div class="policy-card policy-card--highlight">
+                    <p class="policy-card__title policy-card__title--accent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>يتطلب موافقة صريحة</p>
+                    <p>هذه الميزة <strong>معطّلة افتراضيًا</strong>. لا تُفعَّل إلا عند تمكينها صراحةً في الإعدادات والموافقة على الشروط المرتبطة بها. تتطلب اشتراكًا مميزًا نشطًا. يمكنك سحب موافقتك في أي وقت من <strong>الإعدادات &gt; تقارير الذكاء الاصطناعي &gt; تعطيل</strong>.</p>
+                </div>
+                <h3 style="font-size:var(--font-size-lg);font-weight:700;color:var(--color-text-primary);margin:var(--spacing-lg) 0 var(--spacing-md)">ما البيانات المُرسَلة إلى OpenAI؟</h3>
+                <p>عند تفعيل ميزة الذكاء الاصطناعي، نُرسل <strong>ملخصًا منظمًا ومجهول الهوية</strong> لاتجاهاتك الصحية إلى API الخاص بـ OpenAI. البيانات المُرسَلة لا <strong>تتضمن</strong>:</p>
+                <ul>
+                    <li>اسمك أو بريدك الإلكتروني أو أي معرّف شخصي</li>
+                    <li>معرّفات الجهاز أو معلومات الحساب</li>
+                    <li>قراءات صحية فردية خام أو مؤرّخة</li>
+                    <li>بيانات الموقع</li>
+                </ul>
+                <p>ما يُرسَل هو ملخصات إحصائية مجمّعة، مثلًا:</p>
+                <div class="policy-card">
+                    <ul>
+                        <li>متوسط ضغط الدم الانقباضي/الانبساطي للأسبوع</li>
+                        <li>متوسط معدل ضربات القلب أثناء الراحة</li>
+                        <li>اتجاه HRV الأسبوعي (تحسّن / مستقر / تراجع)</li>
+                        <li>متوسط مدة النوم ودرجة الجودة</li>
+                        <li>متوسط الخطوات اليومية ودقائق التمرين</li>
+                    </ul>
+                </div>
+                <div class="policy-card policy-card--warning" style="margin-top:var(--spacing-md)">
+                    <p class="policy-card__title policy-card__title--warning"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>معالجة البيانات من قِبل OpenAI</p>
+                    <p>تُعالج الملخصات الصحية مجهولة الهوية من قِبل OpenAI وفق سياسة خصوصيتهم. ننصح بمراجعة <a href="https://openai.com/policies/privacy-policy" target="_blank" rel="noopener noreferrer">سياسة خصوصية OpenAI</a>. تُفيد OpenAI بأن البيانات المُرسلة عبر الـ API لا تُستخدم افتراضيًا لتدريب نماذجهم.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="policy-divider"></div>
+
+        <section class="policy-section" id="analytics">
+            <div class="policy-section__header">
+                <div class="policy-section__icon policy-section__icon--amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+                <h2 class="policy-section__title">4. التحليلات وتقارير الأعطال</h2>
+            </div>
+            <div class="policy-section__body">
+                <p>نستخدم Firebase (Google) لتحسين استقرار التطبيق:</p>
+                <div class="policy-card">
+                    <ul>
+                        <li><strong>Firebase Crashlytics</strong> — يجمع تقارير الأعطال لتحديد الأخطاء وإصلاحها. لا تتضمن بيانات صحية.</li>
+                        <li><strong>Firebase Analytics</strong> — يجمع أحداث الاستخدام المجهولة الهوية. لا تُجمع معلومات تعريفية شخصية.</li>
+                    </ul>
+                </div>
+                <p style="margin-top:var(--spacing-md)">للاطلاع على ممارسات خصوصية Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">سياسة خصوصية Google</a></p>
+            </div>
+        </section>
+
+        <div class="policy-divider"></div>
+
+        <section class="policy-section" id="sharing">
+            <div class="policy-section__header">
+                <div class="policy-section__icon policy-section__icon--emerald"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></div>
+                <h2 class="policy-section__title">5. مشاركة البيانات</h2>
+            </div>
+            <div class="policy-section__body">
+                <p><strong>لا نبيع بياناتك الشخصية.</strong> تُشارك البيانات فقط في الحالات المحدودة التالية:</p>
+                <ul>
+                    <li><strong>مزودو الخدمة</strong> — Firebase (Google) للتشخيص والتحليل، وOpenAI فقط عند تمكين تقارير الذكاء الاصطناعي.</li>
+                    <li><strong>المتطلبات القانونية</strong> — عند الطلب بموجب القانون أو أمر قضائي.</li>
+                    <li><strong>المعاملات التجارية</strong> — في حالة الاندماج أو الاستحواذ.</li>
+                    <li><strong>موافقتك</strong> — عند منحنا إذنًا صريحًا.</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="policy-divider"></div>
+
+        <section class="policy-section" id="retention">
+            <div class="policy-section__header">
+                <div class="policy-section__icon policy-section__icon--slate"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+                <h2 class="policy-section__title">6. الاحتفاظ بالبيانات والأمان</h2>
+            </div>
+            <div class="policy-section__body">
+                <p>تبقى بياناتك الصحية بالكامل على جهازك وضمن نظام HealthKit لدى Apple — لا نخزّنها على خوادمنا. تُحتفظ بيانات الاستخدام المجهولة من Firebase لمدة تصل إلى 14 شهرًا.</p>
+                <p>نطبّق معايير الأمان الصناعية لحماية جميع البيانات التي نتعامل معها.</p>
+            </div>
+        </section>
+
+        <div class="policy-divider"></div>
+
+        <section class="policy-section" id="children">
+            <div class="policy-section__header">
+                <div class="policy-section__icon policy-section__icon--rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                <h2 class="policy-section__title">7. خصوصية الأطفال</h2>
+            </div>
+            <div class="policy-section__body">
+                <p>لا يستهدف Pressure Control الأطفال دون سن 13 عامًا. لا نجمع عن سابق علم معلومات شخصية من الأطفال. إن كنت تعتقد أننا جمعنا مثل هذه البيانات، يرجى التواصل معنا فورًا وسنحذفها على الفور.</p>
+            </div>
+        </section>
+
+        <div class="policy-divider"></div>
+
+        <section class="policy-section" id="rights">
+            <div class="policy-section__header">
+                <div class="policy-section__icon policy-section__icon--blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                <h2 class="policy-section__title">8. حقوقك</h2>
+            </div>
+            <div class="policy-section__body">
+                <p>بما أننا لا نخزّن بيانات شخصية قابلة للتعريف على خوادمنا، تُمارَس حقوقك بصورة رئيسية عبر أدوات التحكم المدمجة في التطبيق وiOS:</p>
+                <ul>
+                    <li><strong>حذف البيانات المحلية</strong> — يمكنك حذف جميع البيانات المسجّلة من إعدادات التطبيق مباشرةً.</li>
+                    <li><strong>سحب موافقة الذكاء الاصطناعي</strong> — عطّل تقارير الذكاء الاصطناعي في أي وقت من الإعدادات &gt; تقارير الذكاء الاصطناعي دون التأثير على باقي الميزات.</li>
+                    <li><strong>إلغاء وصول HealthKit</strong> — أزل وصول التطبيق للبيانات الصحية من إعدادات iOS &gt; الخصوصية والأمان &gt; الصحة.</li>
+                    <li><strong>بيانات Firebase</strong> — بما أنها تُجمع بصورة مجهولة، لا يمكن نسبها لمستخدم بعينه. لمزيد من المعلومات، راجع <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">سياسة خصوصية Google</a>.</li>
+                </ul>
+                <p>لأي طلبات أخرى، تواصل معنا عبر نموذج الدعم.</p>
+            </div>
+        </section>
+
+        <div class="policy-divider"></div>
+
+        <section class="policy-section" id="contact">
+            <div class="policy-section__header">
+                <div class="policy-section__icon policy-section__icon--emerald"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+                <h2 class="policy-section__title">9. اتصل بنا</h2>
+            </div>
+            <div class="policy-section__body">
+                <p>لأي استفسارات تتعلق بسياسة الخصوصية، استخدم نموذج الدعم أو تواصل معنا مباشرةً:</p>
+                <div class="policy-card policy-card--highlight">
+                    <p class="policy-card__title policy-card__title--accent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>تواصل مع الدعم</p>
+                    <p>استخدم <a href="../../ar/support/index.html">صفحة الدعم</a> لإرسال رسالة مباشرةً من الموقع — بدون برنامج بريد إلكتروني.</p>
+                </div>
+                <div class="policy-card" style="margin-top:var(--spacing-md)">
+                    <ul>
+                        <li><strong>X (Twitter):</strong> <a href="https://x.com/BLOODPRESSURE_A" target="_blank" rel="noopener noreferrer">@BLOODPRESSURE_A</a></li>
+                        <li><strong>المطوّر:</strong> هيبوليتو أرياس، إسبانيا</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <img src="../../content/image/xjf2048aaxk5vkiasgrz.jpg" alt="Pressure Control" class="footer__logo" />
+                    <span class="footer__brand-name">Pressure Control</span>
+                    <p class="footer__tagline">صحتك، في متناول يدك.</p>
+                </div>
+                <div class="footer__links-group">
+                    <h4 class="footer__links-title">المنتج</h4>
+                    <a href="../../ar/index.html#features" class="footer__link">الميزات</a>
+                    <a href="../../ar/index.html#pricing" class="footer__link">الأسعار</a>
+                </div>
+                <div class="footer__links-group">
+                    <h4 class="footer__links-title">قانوني</h4>
+                    <a href="../../ar/privacy/index.html" class="footer__link">سياسة الخصوصية</a>
+                </div>
+                <div class="footer__links-group">
+                    <h4 class="footer__links-title">الدعم</h4>
+                    <a href="../../ar/support/index.html" class="footer__link">مركز المساعدة</a>
+                    <a href="mailto:pressurecontrol.app@gmail.com" class="footer__link">اتصل بنا</a>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">&copy; <script>document.write(new Date().getFullYear())</script><noscript>2025</noscript> Pressure Control. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileToggle = document.querySelector('.nav__mobile-toggle');
+        const navLinks = document.querySelector('.nav__links');
+        mobileToggle?.addEventListener('click', () => { navLinks?.classList.toggle('nav__links--active'); mobileToggle.classList.toggle('nav__mobile-toggle--active'); });
+        const langBtn = document.querySelector('.nav__lang-btn');
+        const langDropdown = document.querySelector('.nav__lang-dropdown');
+        langBtn?.addEventListener('click', () => { langDropdown?.classList.toggle('nav__lang-dropdown--active'); });
+        document.addEventListener('click', (e) => { if (!e.target.closest('.nav__lang')) langDropdown?.classList.remove('nav__lang-dropdown--active'); });
+        const nav = document.querySelector('.nav');
+        window.addEventListener('scroll', () => { nav?.classList.toggle('nav--scrolled', window.scrollY > 50); });
+    </script>
+</body>
+</html>

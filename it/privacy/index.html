@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Informativa sulla Privacy - Pressure Control</title>
+    <meta name="description" content="Informativa sulla Privacy di Pressure Control — come gestiamo i tuoi dati sanitari, HealthKit e le funzioni IA opzionali." />
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <link rel="icon" href="../../assets/favicon.png" />
+    <link rel="canonical" href="https://litoarias.github.io/landing-pressure-control/it/privacy/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://litoarias.github.io/landing-pressure-control/assets/style.css" />
+    <style>
+        .policy-hero{padding:calc(var(--nav-height) + var(--spacing-3xl)) var(--spacing-xl) var(--spacing-3xl);text-align:center;position:relative;overflow:hidden}
+        .policy-hero__bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(6,182,212,.12) 0%,transparent 70%),radial-gradient(ellipse 50% 40% at 80% 100%,rgba(225,29,72,.08) 0%,transparent 60%);pointer-events:none}
+        .policy-hero__label{display:inline-flex;align-items:center;gap:var(--spacing-xs);padding:.35rem var(--spacing-md);font-size:var(--font-size-xs);font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--color-accent);background:var(--color-accent-bg);border:1px solid rgba(6,182,212,.2);border-radius:var(--radius-full);margin-bottom:var(--spacing-lg)}
+        .policy-hero__title{font-family:var(--font-display);font-size:var(--font-size-4xl);font-weight:700;color:var(--color-text-primary);line-height:1.15;margin-bottom:var(--spacing-md);letter-spacing:-.02em}
+        .policy-hero__subtitle{font-size:var(--font-size-lg);color:var(--color-text-secondary);max-width:560px;margin:0 auto;line-height:1.6}
+        .policy-content{max-width:800px;margin:0 auto;padding:var(--spacing-2xl) var(--spacing-xl) var(--spacing-4xl)}
+        .policy-toc{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--spacing-xl);margin-bottom:var(--spacing-2xl);box-shadow:var(--shadow-sm)}
+        .policy-toc__title{font-size:var(--font-size-sm);font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--color-text-tertiary);margin-bottom:var(--spacing-md)}
+        .policy-toc__list{list-style:none;display:flex;flex-direction:column;gap:var(--spacing-xs)}
+        .policy-toc__list a{font-size:var(--font-size-sm);color:var(--color-text-secondary);text-decoration:none;transition:color var(--transition-fast);display:flex;align-items:center;gap:var(--spacing-sm)}
+        .policy-toc__list a:hover{color:var(--color-accent)}
+        .policy-toc__num{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;font-size:10px;font-weight:700;color:var(--color-accent);background:var(--color-accent-bg);border-radius:var(--radius-full);flex-shrink:0}
+        .policy-section{margin-bottom:var(--spacing-2xl);scroll-margin-top:calc(var(--nav-height) + var(--spacing-lg))}
+        .policy-section__header{display:flex;align-items:center;gap:var(--spacing-md);margin-bottom:var(--spacing-lg)}
+        .policy-section__icon{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-lg);flex-shrink:0}
+        .policy-section__icon svg{width:22px;height:22px}
+        .policy-section__icon--blue{background:rgba(6,182,212,.12);color:var(--color-accent)}
+        .policy-section__icon--rose{background:rgba(225,29,72,.1);color:#e11d48}
+        .policy-section__icon--amber{background:rgba(217,119,6,.1);color:#d97706}
+        .policy-section__icon--emerald{background:rgba(5,150,105,.1);color:#059669}
+        .policy-section__icon--purple{background:rgba(124,58,237,.1);color:#7c3aed}
+        .policy-section__icon--slate{background:rgba(100,116,139,.1);color:#64748b}
+        .policy-section__title{font-family:var(--font-display);font-size:var(--font-size-2xl);font-weight:700;color:var(--color-text-primary);letter-spacing:-.01em}
+        .policy-section__body{color:var(--color-text-secondary);line-height:1.8;font-size:var(--font-size-base)}
+        .policy-section__body p{margin-bottom:var(--spacing-md)}
+        .policy-section__body p:last-child{margin-bottom:0}
+        .policy-section__body ul{list-style:none;display:flex;flex-direction:column;gap:var(--spacing-sm);margin-bottom:var(--spacing-md)}
+        .policy-section__body ul li{display:flex;align-items:flex-start;gap:var(--spacing-sm);padding-left:var(--spacing-sm)}
+        .policy-section__body ul li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--color-accent);flex-shrink:0;margin-top:.6em}
+        .policy-section__body a{color:var(--color-accent);text-decoration:underline;text-underline-offset:3px}
+        .policy-section__body a:hover{color:var(--color-accent-dark)}
+        .policy-section__body strong{color:var(--color-text-primary);font-weight:600}
+        .policy-card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--spacing-xl);margin-top:var(--spacing-md);box-shadow:var(--shadow-sm)}
+        .policy-card--highlight{border-color:rgba(6,182,212,.25);background:linear-gradient(135deg,rgba(6,182,212,.04),rgba(225,29,72,.03))}
+        .policy-card--warning{border-color:rgba(217,119,6,.25);background:rgba(217,119,6,.04)}
+        .policy-card__title{font-size:var(--font-size-base);font-weight:700;color:var(--color-text-primary);margin-bottom:var(--spacing-sm);display:flex;align-items:center;gap:var(--spacing-sm)}
+        .policy-card__title svg{width:18px;height:18px;flex-shrink:0}
+        .policy-card__title--accent{color:var(--color-accent)}
+        .policy-card__title--warning{color:#d97706}
+        .policy-data-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:var(--spacing-sm);margin-top:var(--spacing-md)}
+        .policy-data-item{background:var(--color-bg-secondary);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:var(--spacing-md);display:flex;align-items:flex-start;gap:var(--spacing-sm)}
+        .policy-data-item__icon{font-size:1.25rem;flex-shrink:0;line-height:1}
+        .policy-data-item__text{font-size:var(--font-size-sm);color:var(--color-text-secondary);line-height:1.5}
+        .policy-data-item__label{font-weight:600;color:var(--color-text-primary);display:block;margin-bottom:2px}
+        .policy-divider{height:1px;background:var(--color-border);margin:var(--spacing-2xl) 0}
+        .policy-badge{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;font-size:var(--font-size-xs);font-weight:700;letter-spacing:.04em;border-radius:var(--radius-full)}
+        .policy-badge--optional{color:#059669;background:rgba(5,150,105,.1);border:1px solid rgba(5,150,105,.2)}
+        @media(max-width:640px){.policy-hero__title{font-size:var(--font-size-3xl)}.policy-content{padding:var(--spacing-xl) var(--spacing-md) var(--spacing-3xl)}.policy-data-grid{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav__container">
+            <a href="../../index.html" class="nav__logo">
+                <img src="../../content/image/xjf2048aaxk5vkiasgrz.jpg" alt="Pressure Control" class="nav__logo-img" />
+                <span class="nav__logo-text">Pressure Control</span>
+            </a>
+            <div class="nav__links">
+                <a href="../../it/index.html#features" class="nav__link">Funzionalità</a>
+                <a href="../../it/index.html#pricing" class="nav__link">Prezzi</a>
+                <a href="../../it/support/index.html" class="nav__link">Supporto</a>
+                <div class="nav__lang">
+                    <button class="nav__lang-btn" aria-label="Cambia lingua" type="button">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        IT
+                    </button>
+                    <div class="nav__lang-dropdown">
+                        <a href="../../privacy/index.html" class="nav__lang-option">English</a>
+                        <a href="../../ar/privacy/index.html" class="nav__lang-option">العربية</a>
+                        <a href="../../zh/privacy/index.html" class="nav__lang-option">简体中文</a>
+                        <a href="../../zh-TW/privacy/index.html" class="nav__lang-option">繁體中文</a>
+                        <a href="../../fr/privacy/index.html" class="nav__lang-option">Français</a>
+                        <a href="../../de/privacy/index.html" class="nav__lang-option">Deutsch</a>
+                        <a href="../../it/privacy/index.html" class="nav__lang-option nav__lang-option--active">Italiano</a>
+                        <a href="../../ja/privacy/index.html" class="nav__lang-option">日本語</a>
+                        <a href="../../ko/privacy/index.html" class="nav__lang-option">한국어</a>
+                        <a href="../../pt/privacy/index.html" class="nav__lang-option">Português</a>
+                        <a href="../../ru/privacy/index.html" class="nav__lang-option">Русский</a>
+                        <a href="../../es/privacy/index.html" class="nav__lang-option">Español</a>
+                    </div>
+                </div>
+                <a href="https://apps.apple.com/us/app/pressure-control-tracker/id6738280822" class="nav__cta" target="_blank">Scarica</a>
+            </div>
+            <button class="nav__mobile-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <section class="policy-hero">
+        <div class="policy-hero__bg"></div>
+        <div style="position:relative;">
+            <div class="policy-hero__label"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Legale &amp; Privacy</div>
+            <h1 class="policy-hero__title">Informativa sulla Privacy</h1>
+            <p class="policy-hero__subtitle">Ultimo aggiornamento: 20 aprile 2025. Rispettiamo la tua privacy e siamo trasparenti su come vengono utilizzati i tuoi dati.</p>
+        </div>
+    </section>
+
+    <main class="policy-content">
+        <nav class="policy-toc" aria-label="Indice">
+            <p class="policy-toc__title">Indice</p>
+            <ul class="policy-toc__list">
+                <li><a href="#data-collected"><span class="policy-toc__num">1</span>Dati raccolti</a></li>
+                <li><a href="#healthkit"><span class="policy-toc__num">2</span>HealthKit e dati sanitari</a></li>
+                <li><a href="#openai"><span class="policy-toc__num">3</span>Report IA (OpenAI)</a></li>
+                <li><a href="#analytics"><span class="policy-toc__num">4</span>Analisi e report crash</a></li>
+                <li><a href="#sharing"><span class="policy-toc__num">5</span>Condivisione dei dati</a></li>
+                <li><a href="#retention"><span class="policy-toc__num">6</span>Conservazione e sicurezza</a></li>
+                <li><a href="#children"><span class="policy-toc__num">7</span>Privacy dei minori</a></li>
+                <li><a href="#rights"><span class="policy-toc__num">8</span>I tuoi diritti</a></li>
+                <li><a href="#contact"><span class="policy-toc__num">9</span>Contattaci</a></li>
+            </ul>
+        </nav>
+
+        <div class="policy-section__body" style="margin-bottom:var(--spacing-2xl)">
+            <p>Pressure Control è sviluppato da Hipolito Arias, con sede in Spagna. Questa Informativa sulla Privacy spiega quali informazioni raccogliamo quando usi la nostra app iOS, come le utilizziamo e le scelte a tua disposizione.</p>
+        </div>
+
+        <section class="policy-section" id="data-collected">
+            <div class="policy-section__header">
+                <div class="policy-section__icon policy-section__icon--blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+                <h2 class="policy-section__title">1. Dati raccolti</h2>
+            </div>
+            <div class="policy-section__body">
+                <p>Raccogliamo due categorie di dati: informazioni che fornisci direttamente e informazioni raccolte automaticamente.</p>
+                <div class="policy-card">
+                    <p class="policy-card__title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Dati raccolti automaticamente</p>
+                    <ul>
+                        <li>Tipo di dispositivo, versione del sistema operativo e dell'app</li>
+                        <li>Durata della sessione e pattern di utilizzo delle funzionalità</li>
+                        <li>Report di crash e informazioni diagnostiche</li>
+                        <li>Identificatori anonimi del dispositivo (non collegati alla tua identità)</li>
+                    </ul>
+                </div>
+                <div class="policy-card" style="margin-top:var(--spacing-md)">
+                    <p class="policy-card__title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Informazioni che fornisci</p>
+                    <ul>
+                        <li>Misurazioni della pressione arteriosa inserite manualmente</li>
+                        <li>Note e contesto aggiunti alle tue misurazioni</li>
+                        <li>Preferenze e impostazioni dell'app</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="policy-divider"></div>
+
+        <section class="policy-section" id="healthkit">
+            <div class="policy-section__header">
+                <div class="policy-section__icon policy-section__icon--rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+                <h2 class="policy-section__title">2. HealthKit e dati sanitari</h2>
+            </div>
+            <div class="policy-section__body">
+                <p>Pressure Control si integra con Apple HealthKit per leggere e visualizzare le tue metriche di salute. Richiediamo accesso solo ai tipi di dati necessari per le funzionalità principali dell'app.</p>
+                <div class="policy-data-grid">
+                    <div class="policy-data-item"><span class="policy-data-item__icon">&#x2764;&#xFE0F;</span><div class="policy-data-item__text"><span class="policy-data-item__label">Pressione arteriosa</span>Letture sistolica e diastolica</div></div>
+                    <div class="policy-data-item"><span class="policy-data-item__icon">&#x1F493;</span><div class="policy-data-item__text"><span class="policy-data-item__label">Frequenza cardiaca</span>BPM attivo</div></div>
+                    <div class="policy-data-item"><span class="policy-data-item__icon">&#x1FAC0;</span><div class="policy-data-item__text"><span class="policy-data-item__label">FC a riposo</span>BPM a riposo</div></div>
+                    <div class="policy-data-item"><span class="policy-data-item__icon">&#x1F6B6;</span><div class="policy-data-item__text"><span class="policy-data-item__label">FC durante la camminata</span>BPM media camminando</div></div>
+                    <div class="policy-data-item"><span class="policy-data-item__icon">&#x1F4CA;</span><div class="policy-data-item__text"><span class="policy-data-item__label">Variabilità cardiaca</span>HRV (SDNN)</div></div>
+                    <div class="policy-data-item"><span class="policy-data-item__icon">&#x1F504;</span><div class="policy-data-item__text"><span class="policy-data-item__label">Recupero cardiaco</span>Recupero 1 min dopo l'esercizio</div></div>
+                    <div class="policy-data-item"><span class="policy-data-item__icon">&#x1FA78;</span><div class="policy-data-item__text"><span class="policy-data-item__label">Ossigeno nel sangue</span>Saturazione SpO&#x2082;</div></div>
+                    <div class="policy-data-item"><span class="policy-data-item__icon">&#x1F32C;&#xFE0F;</span><div class="policy-data-item__text"><span class="policy-data-item__label">Frequenza respiratoria</span>Respiri al minuto</div></div>
+                    <div class="policy-data-item"><span class="policy-data-item__icon">&#x1F3C3;</span><div class="policy-data-item__text"><span class="policy-data-item__label">VO2 max</span>Livello di fitness cardiovascolare</div></div>
+                    <div class="policy-data-item"><span class="policy-data-item__icon">&#x1F634;</span><div class="policy-data-item__text"><span class="policy-data-item__label">Sonno</span>Durata e fasi di qualità</div></div>
+                    <div class="policy-data-item"><span class="policy-data-item__icon">&#x1F45F;</span><div class="policy-data-item__text"><span class="policy-data-item__label">Passi</span>Numero di passi giornalieri</div></div>
+                    <div class="policy-data-item"><span class="policy-data-item__icon">&#x26A1;</span><div class="policy-data-item__text"><span class="policy-data-item__label">Energia attiva</span>Calorie bruciate durante l'attività</div></div>
+                    <div class="policy-data-item"><span class="policy-data-item__icon">&#x1F50B;</span><div class="policy-data-item__text"><span class="policy-data-item__label">Energia basale</span>Calorie metaboliche a riposo</div></div>
+                    <div class="policy-data-item"><span class="policy-data-item__icon">&#x23F1;&#xFE0F;</span><div class="policy-data-item__text"><span class="policy-data-item__label">Tempo di esercizio</span>Minuti di esercizio Apple</div></div>
+                    <div class="policy-data-item"><span class="policy-data-item__icon">&#x1F9D8;</span><div class="policy-data-item__text"><span class="policy-data-item__label">Sessioni di mindfulness</span>Mindfulness e meditazione</div></div>
+                </div>
+                <div class="policy-card policy-card--highlight" style="margin-top:var(--spacing-lg)">
+                    <p class="policy-card__title policy-card__title--accent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>I tuoi dati sanitari rimangono sul tuo dispositivo</p>
+                    <p>I dati sanitari letti da HealthKit vengono elaborati e visualizzati localmente sul tuo dispositivo. Non carichiamo né conserviamo i tuoi dati sanitari grezzi sui nostri server.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="policy-divider"></div>
+
+        <section class="policy-section" id="openai">
+            <div class="policy-section__header">
+                <div class="policy-section__icon policy-section__icon--purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+                <h2 class="policy-section__title">3. Report IA (OpenAI)</h2>
+            </div>
+            <div class="policy-section__body">
+                <p>Pressure Control offre una funzione IA opzionale che genera report settimanali di benessere personalizzati tramite i modelli linguistici di OpenAI. <span class="policy-badge policy-badge--optional">Opzionale</span></p>
+                <div class="policy-card policy-card--highlight">
+                    <p class="policy-card__title policy-card__title--accent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>Consenso esplicito richiesto</p>
+                    <p>Questa funzione è <strong>disattivata per impostazione predefinita</strong>. Viene attivata solo quando la abiliti esplicitamente nelle impostazioni. Richiede un abbonamento Premium attivo. Puoi revocare il consenso in qualsiasi momento da <strong>Impostazioni &gt; Report IA &gt; Disattiva</strong>.</p>
+                </div>
+                <h3 style="font-size:var(--font-size-lg);font-weight:700;color:var(--color-text-primary);margin:var(--spacing-lg) 0 var(--spacing-md)">Quali dati vengono inviati a OpenAI?</h3>
+                <p>Quando la funzione IA è attiva, inviamo un <strong>riepilogo strutturato e anonimizzato</strong> delle tue tendenze di salute all'API di OpenAI. I dati inviati <strong>non</strong> includono:</p>
+                <ul>
+                    <li>Il tuo nome, indirizzo e-mail o qualsiasi identificatore personale</li>
+                    <li>Identificatori del dispositivo o informazioni sull'account</li>
+                    <li>Misurazioni individuali grezze o con timestamp</li>
+                    <li>Dati di posizione</li>
+                </ul>
+                <p>Vengono inviati riepiloghi statistici aggregati, ad esempio:</p>
+                <div class="policy-card">
+                    <ul>
+                        <li>Pressione arteriosa sistolica/diastolica media della settimana</li>
+                        <li>Frequenza cardiaca a riposo media</li>
+                        <li>Tendenza HRV settimanale (in miglioramento / stabile / in calo)</li>
+                        <li>Durata media del sonno e punteggio di qualità</li>
+                        <li>Passi giornalieri e minuti di esercizio medi</li>
+                    </ul>
+                </div>
+                <div class="policy-card policy-card--warning" style="margin-top:var(--spacing-md)">
+                    <p class="policy-card__title policy-card__title--warning"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>Elaborazione dei dati da parte di OpenAI</p>
+                    <p>I riepiloghi sanitari anonimizzati vengono elaborati da OpenAI secondo la loro informativa sulla privacy. Consigliamo di consultare l'<a href="https://openai.com/policies/privacy-policy" target="_blank" rel="noopener noreferrer">Informativa sulla Privacy di OpenAI</a>. OpenAI dichiara che i dati inviati tramite API non vengono utilizzati per addestrare i loro modelli per impostazione predefinita.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="policy-divider"></div>
+
+        <section class="policy-section" id="analytics">
+            <div class="policy-section__header">
+                <div class="policy-section__icon policy-section__icon--amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+                <h2 class="policy-section__title">4. Analisi e report crash</h2>
+            </div>
+            <div class="policy-section__body">
+                <p>Utilizziamo Firebase (Google) per migliorare la stabilità dell'app:</p>
+                <div class="policy-card">
+                    <ul>
+                        <li><strong>Firebase Crashlytics</strong> — raccoglie report di crash per identificare e correggere bug. Nessun dato sanitario è incluso.</li>
+                        <li><strong>Firebase Analytics</strong> — raccoglie eventi di utilizzo anonimi. Nessuna informazione personalmente identificabile viene raccolta.</li>
+                    </ul>
+                </div>
+                <p style="margin-top:var(--spacing-md)">Per le pratiche sulla privacy di Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Informativa sulla Privacy di Google</a>.</p>
+            </div>
+        </section>
+
+        <div class="policy-divider"></div>
+
+        <section class="policy-section" id="sharing">
+            <div class="policy-section__header">
+                <div class="policy-section__icon policy-section__icon--emerald"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></div>
+                <h2 class="policy-section__title">5. Condivisione dei dati</h2>
+            </div>
+            <div class="policy-section__body">
+                <p><strong>Non vendiamo i tuoi dati personali.</strong> I dati vengono condivisi solo in circostanze limitate:</p>
+                <ul>
+                    <li><strong>Fornitori di servizi</strong> — Firebase (Google) per diagnostica e analisi, e OpenAI solo se hai abilitato i report IA.</li>
+                    <li><strong>Obblighi legali</strong> — Se richiesto dalla legge applicabile o da un ordine del tribunale.</li>
+                    <li><strong>Transazioni commerciali</strong> — In caso di fusione o acquisizione.</li>
+                    <li><strong>Il tuo consenso</strong> — Quando ci hai esplicitamente autorizzato.</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="policy-divider"></div>
+
+        <section class="policy-section" id="retention">
+            <div class="policy-section__header">
+                <div class="policy-section__icon policy-section__icon--slate"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+                <h2 class="policy-section__title">6. Conservazione e sicurezza</h2>
+            </div>
+            <div class="policy-section__body">
+                <p>I tuoi dati sanitari rimangono interamente sul tuo dispositivo e nell'ecosistema HealthKit di Apple — non li conserviamo sui nostri server. I dati di utilizzo anonimi di Firebase vengono conservati fino a 14 mesi.</p>
+                <p>Applichiamo misure di sicurezza standard del settore per proteggere tutti i dati che gestiamo.</p>
+            </div>
+        </section>
+
+        <div class="policy-divider"></div>
+
+        <section class="policy-section" id="children">
+            <div class="policy-section__header">
+                <div class="policy-section__icon policy-section__icon--rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                <h2 class="policy-section__title">7. Privacy dei minori</h2>
+            </div>
+            <div class="policy-section__body">
+                <p>Pressure Control non è destinato a bambini di età inferiore ai 13 anni. Non raccogliamo consapevolmente informazioni personali da minori. Se ritieni che abbiamo raccolto tali dati, contattaci immediatamente.</p>
+            </div>
+        </section>
+
+        <div class="policy-divider"></div>
+
+        <section class="policy-section" id="rights">
+            <div class="policy-section__header">
+                <div class="policy-section__icon policy-section__icon--blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                <h2 class="policy-section__title">8. I tuoi diritti</h2>
+            </div>
+            <div class="policy-section__body">
+                <p>Poiché non conserviamo dati personali identificabili sui nostri server, i tuoi diritti si esercitano principalmente tramite i controlli integrati nell'app e in iOS:</p>
+                <ul>
+                    <li><strong>Eliminazione dati locali</strong> — Puoi eliminare tutti i dati registrati nell'app direttamente dalle impostazioni dell'app.</li>
+                    <li><strong>Revocare il consenso IA</strong> — Disabilita i report IA in qualsiasi momento da Impostazioni &gt; Report IA senza influire sulle altre funzionalità.</li>
+                    <li><strong>Revocare l'accesso a HealthKit</strong> — Rimuovi l'accesso dell'app ai dati sanitari in Impostazioni iOS &gt; Privacy e sicurezza &gt; Salute.</li>
+                    <li><strong>Dati Firebase</strong> — Poiché raccolti in forma anonima, non è possibile collegarli a un singolo utente. Per informazioni, contatta Google tramite la loro <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">informativa sulla privacy</a>.</li>
+                </ul>
+                <p>Per qualsiasi altra richiesta, contattaci tramite il modulo di supporto.</p>
+            </div>
+        </section>
+
+        <div class="policy-divider"></div>
+
+        <section class="policy-section" id="contact">
+            <div class="policy-section__header">
+                <div class="policy-section__icon policy-section__icon--emerald"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+                <h2 class="policy-section__title">9. Contattaci</h2>
+            </div>
+            <div class="policy-section__body">
+                <p>Per qualsiasi domanda su questa Informativa sulla Privacy, usa il nostro modulo di supporto o contattaci direttamente:</p>
+                <div class="policy-card policy-card--highlight">
+                    <p class="policy-card__title policy-card__title--accent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Contatta il supporto</p>
+                    <p>Usa la nostra <a href="../../it/support/index.html">pagina di supporto</a> per inviarci un messaggio direttamente dal sito web, senza client e-mail.</p>
+                </div>
+                <div class="policy-card" style="margin-top:var(--spacing-md)">
+                    <ul>
+                        <li><strong>X (Twitter):</strong> <a href="https://x.com/BLOODPRESSURE_A" target="_blank" rel="noopener noreferrer">@BLOODPRESSURE_A</a></li>
+                        <li><strong>Sviluppatore:</strong> Hipolito Arias, Spagna</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <img src="../../content/image/xjf2048aaxk5vkiasgrz.jpg" alt="Pressure Control" class="footer__logo" />
+                    <span class="footer__brand-name">Pressure Control</span>
+                    <p class="footer__tagline">La tua salute, semplificata.</p>
+                </div>
+                <div class="footer__links-group">
+                    <h4 class="footer__links-title">Prodotto</h4>
+                    <a href="../../it/index.html#features" class="footer__link">Funzionalità</a>
+                    <a href="../../it/index.html#pricing" class="footer__link">Prezzi</a>
+                </div>
+                <div class="footer__links-group">
+                    <h4 class="footer__links-title">Legale</h4>
+                    <a href="../../it/privacy/index.html" class="footer__link">Informativa sulla Privacy</a>
+                </div>
+                <div class="footer__links-group">
+                    <h4 class="footer__links-title">Supporto</h4>
+                    <a href="../../it/support/index.html" class="footer__link">Centro assistenza</a>
+                    <a href="mailto:pressurecontrol.app@gmail.com" class="footer__link">Contatto</a>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">&copy; <script>document.write(new Date().getFullYear())</script><noscript>2025</noscript> Pressure Control. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileToggle = document.querySelector('.nav__mobile-toggle');
+        const navLinks = document.querySelector('.nav__links');
+        mobileToggle?.addEventListener('click', () => { navLinks?.classList.toggle('nav__links--active'); mobileToggle.classList.toggle('nav__mobile-toggle--active'); });
+        const langBtn = document.querySelector('.nav__lang-btn');
+        const langDropdown = document.querySelector('.nav__lang-dropdown');
+        langBtn?.addEventListener('click', () => { langDropdown?.classList.toggle('nav__lang-dropdown--active'); });
+        document.addEventListener('click', (e) => { if (!e.target.closest('.nav__lang')) langDropdown?.classList.remove('nav__lang-dropdown--active'); });
+        const nav = document.querySelector('.nav');
+        window.addEventListener('scroll', () => { nav?.classList.toggle('nav--scrolled', window.scrollY > 50); });
+    </script>
+</body>
+</html>

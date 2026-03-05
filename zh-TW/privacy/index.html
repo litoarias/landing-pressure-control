@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>隱私權政策 - Pressure Control</title>
+    <meta name="description" content="Pressure Control 隱私權政策 — 我們如何處理您的健康資料、HealthKit 和選用 AI 功能。" />
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <link rel="icon" href="../../assets/favicon.png" />
+    <link rel="canonical" href="https://litoarias.github.io/landing-pressure-control/zh-TW/privacy/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://litoarias.github.io/landing-pressure-control/assets/style.css" />
+    <style>
+        body{font-family:'Noto Sans TC',var(--font-family)}
+        .policy-hero{padding:calc(var(--nav-height) + var(--spacing-3xl)) var(--spacing-xl) var(--spacing-3xl);text-align:center;position:relative;overflow:hidden}
+        .policy-hero__bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(6,182,212,.12) 0%,transparent 70%),radial-gradient(ellipse 50% 40% at 80% 100%,rgba(225,29,72,.08) 0%,transparent 60%);pointer-events:none}
+        .policy-hero__label{display:inline-flex;align-items:center;gap:var(--spacing-xs);padding:.35rem var(--spacing-md);font-size:var(--font-size-xs);font-weight:600;color:var(--color-accent);background:var(--color-accent-bg);border:1px solid rgba(6,182,212,.2);border-radius:var(--radius-full);margin-bottom:var(--spacing-lg)}
+        .policy-hero__title{font-family:'Noto Sans TC',var(--font-display);font-size:var(--font-size-4xl);font-weight:700;color:var(--color-text-primary);line-height:1.3;margin-bottom:var(--spacing-md)}
+        .policy-hero__subtitle{font-size:var(--font-size-lg);color:var(--color-text-secondary);max-width:560px;margin:0 auto;line-height:1.8}
+        .policy-content{max-width:800px;margin:0 auto;padding:var(--spacing-2xl) var(--spacing-xl) var(--spacing-4xl)}
+        .policy-toc{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--spacing-xl);margin-bottom:var(--spacing-2xl);box-shadow:var(--shadow-sm)}
+        .policy-toc__title{font-size:var(--font-size-sm);font-weight:700;color:var(--color-text-tertiary);margin-bottom:var(--spacing-md)}
+        .policy-toc__list{list-style:none;display:flex;flex-direction:column;gap:var(--spacing-xs)}
+        .policy-toc__list a{font-size:var(--font-size-sm);color:var(--color-text-secondary);text-decoration:none;transition:color var(--transition-fast);display:flex;align-items:center;gap:var(--spacing-sm)}
+        .policy-toc__list a:hover{color:var(--color-accent)}
+        .policy-toc__num{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;font-size:10px;font-weight:700;color:var(--color-accent);background:var(--color-accent-bg);border-radius:var(--radius-full);flex-shrink:0}
+        .policy-section{margin-bottom:var(--spacing-2xl);scroll-margin-top:calc(var(--nav-height) + var(--spacing-lg))}
+        .policy-section__header{display:flex;align-items:center;gap:var(--spacing-md);margin-bottom:var(--spacing-lg)}
+        .policy-section__icon{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-lg);flex-shrink:0}
+        .policy-section__icon svg{width:22px;height:22px}
+        .policy-section__icon--blue{background:rgba(6,182,212,.12);color:var(--color-accent)}
+        .policy-section__icon--rose{background:rgba(225,29,72,.1);color:#e11d48}
+        .policy-section__icon--amber{background:rgba(217,119,6,.1);color:#d97706}
+        .policy-section__icon--emerald{background:rgba(5,150,105,.1);color:#059669}
+        .policy-section__icon--purple{background:rgba(124,58,237,.1);color:#7c3aed}
+        .policy-section__icon--slate{background:rgba(100,116,139,.1);color:#64748b}
+        .policy-section__title{font-family:'Noto Sans TC',var(--font-display);font-size:var(--font-size-2xl);font-weight:700;color:var(--color-text-primary)}
+        .policy-section__body{color:var(--color-text-secondary);line-height:1.9;font-size:var(--font-size-base)}
+        .policy-section__body p{margin-bottom:var(--spacing-md)}
+        .policy-section__body p:last-child{margin-bottom:0}
+        .policy-section__body ul{list-style:none;display:flex;flex-direction:column;gap:var(--spacing-sm);margin-bottom:var(--spacing-md)}
+        .policy-section__body ul li{display:flex;align-items:flex-start;gap:var(--spacing-sm);padding-left:var(--spacing-sm)}
+        .policy-section__body ul li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--color-accent);flex-shrink:0;margin-top:.65em}
+        .policy-section__body a{color:var(--color-accent);text-decoration:underline;text-underline-offset:3px}
+        .policy-section__body a:hover{color:var(--color-accent-dark)}
+        .policy-section__body strong{color:var(--color-text-primary);font-weight:600}
+        .policy-card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--spacing-xl);margin-top:var(--spacing-md);box-shadow:var(--shadow-sm)}
+        .policy-card--highlight{border-color:rgba(6,182,212,.25);background:linear-gradient(135deg,rgba(6,182,212,.04),rgba(225,29,72,.03))}
+        .policy-card--warning{border-color:rgba(217,119,6,.25);background:rgba(217,119,6,.04)}
+        .policy-card__title{font-size:var(--font-size-base);font-weight:700;color:var(--color-text-primary);margin-bottom:var(--spacing-sm);display:flex;align-items:center;gap:var(--spacing-sm)}
+        .policy-card__title svg{width:18px;height:18px;flex-shrink:0}
+        .policy-card__title--accent{color:var(--color-accent)}
+        .policy-card__title--warning{color:#d97706}
+        .policy-data-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:var(--spacing-sm);margin-top:var(--spacing-md)}
+        .policy-data-item{background:var(--color-bg-secondary);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:var(--spacing-md);display:flex;align-items:flex-start;gap:var(--spacing-sm)}
+        .policy-data-item__icon{font-size:1.25rem;flex-shrink:0;line-height:1}
+        .policy-data-item__text{font-size:var(--font-size-sm);color:var(--color-text-secondary);line-height:1.6}
+        .policy-data-item__label{font-weight:600;color:var(--color-text-primary);display:block;margin-bottom:2px}
+        .policy-divider{height:1px;background:var(--color-border);margin:var(--spacing-2xl) 0}
+        .policy-badge{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;font-size:var(--font-size-xs);font-weight:700;border-radius:var(--radius-full)}
+        .policy-badge--optional{color:#059669;background:rgba(5,150,105,.1);border:1px solid rgba(5,150,105,.2)}
+        @media(max-width:640px){.policy-hero__title{font-size:var(--font-size-3xl)}.policy-content{padding:var(--spacing-xl) var(--spacing-md) var(--spacing-3xl)}.policy-data-grid{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav__container">
+            <a href="../../index.html" class="nav__logo">
+                <img src="../../content/image/xjf2048aaxk5vkiasgrz.jpg" alt="Pressure Control" class="nav__logo-img" />
+                <span class="nav__logo-text">Pressure Control</span>
+            </a>
+            <div class="nav__links">
+                <a href="../../zh-TW/index.html#features" class="nav__link">功能</a>
+                <a href="../../zh-TW/index.html#pricing" class="nav__link">定價</a>
+                <a href="../../zh-TW/support/index.html" class="nav__link">支援</a>
+                <div class="nav__lang">
+                    <button class="nav__lang-btn" aria-label="切換語言" type="button">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        繁中
+                    </button>
+                    <div class="nav__lang-dropdown">
+                        <a href="../../privacy/index.html" class="nav__lang-option">English</a>
+                        <a href="../../ar/privacy/index.html" class="nav__lang-option">العربية</a>
+                        <a href="../../zh/privacy/index.html" class="nav__lang-option">简体中文</a>
+                        <a href="../../zh-TW/privacy/index.html" class="nav__lang-option nav__lang-option--active">繁體中文</a>
+                        <a href="../../fr/privacy/index.html" class="nav__lang-option">Français</a>
+                        <a href="../../de/privacy/index.html" class="nav__lang-option">Deutsch</a>
+                        <a href="../../it/privacy/index.html" class="nav__lang-option">Italiano</a>
+                        <a href="../../ja/privacy/index.html" class="nav__lang-option">日本語</a>
+                        <a href="../../ko/privacy/index.html" class="nav__lang-option">한국어</a>
+                        <a href="../../pt/privacy/index.html" class="nav__lang-option">Português</a>
+                        <a href="../../ru/privacy/index.html" class="nav__lang-option">Русский</a>
+                        <a href="../../es/privacy/index.html" class="nav__lang-option">Español</a>
+                    </div>
+                </div>
+                <a href="https://apps.apple.com/us/app/pressure-control-tracker/id6738280822" class="nav__cta" target="_blank">下載</a>
+            </div>
+            <button class="nav__mobile-toggle" aria-label="選單"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <section class="policy-hero">
+        <div class="policy-hero__bg"></div>
+        <div style="position:relative;">
+            <div class="policy-hero__label"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>法律與隱私</div>
+            <h1 class="policy-hero__title">隱私權政策</h1>
+            <p class="policy-hero__subtitle">最後更新：2025年4月20日。我們尊重您的隱私，並透明說明資料使用方式。</p>
+        </div>
+    </section>
+
+    <main class="policy-content">
+        <nav class="policy-toc" aria-label="目錄">
+            <p class="policy-toc__title">目錄</p>
+            <ul class="policy-toc__list">
+                <li><a href="#data-collected"><span class="policy-toc__num">1</span>收集的資料</a></li>
+                <li><a href="#healthkit"><span class="policy-toc__num">2</span>HealthKit 與健康資料</a></li>
+                <li><a href="#openai"><span class="policy-toc__num">3</span>AI 報告（OpenAI）</a></li>
+                <li><a href="#analytics"><span class="policy-toc__num">4</span>分析與當機報告</a></li>
+                <li><a href="#sharing"><span class="policy-toc__num">5</span>資料共享</a></li>
+                <li><a href="#retention"><span class="policy-toc__num">6</span>資料保留與安全</a></li>
+                <li><a href="#children"><span class="policy-toc__num">7</span>兒童隱私</a></li>
+                <li><a href="#rights"><span class="policy-toc__num">8</span>您的權利</a></li>
+                <li><a href="#contact"><span class="policy-toc__num">9</span>聯絡我們</a></li>
+            </ul>
+        </nav>
+
+        <div class="policy-section__body" style="margin-bottom:var(--spacing-2xl)">
+            <p>Pressure Control 由位於西班牙的 Hipolito Arias 開發。本隱私權政策說明您使用我們 iOS 應用程式時所收集的資訊、使用方式及您的選擇。</p>
+        </div>
+
+        <section class="policy-section" id="data-collected">
+            <div class="policy-section__header">
+                <div class="policy-section__icon policy-section__icon--blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+                <h2 class="policy-section__title">1. 收集的資料</h2>
+            </div>
+            <div class="policy-section__body">
+                <p>我們收集兩類資料：您直接提供的資訊，以及自動收集的資訊。</p>
+                <div class="policy-card">
+                    <p class="policy-card__title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>自動收集的資料</p>
+                    <ul>
+                        <li>裝置類型、作業系統版本及應用程式版本</li>
+                        <li>工作階段時長及功能使用模式</li>
+                        <li>當機報告及診斷資訊</li>
+                        <li>匿名裝置識別碼（不與您的身分關聯）</li>
+                    </ul>
+                </div>
+                <div class="policy-card" style="margin-top:var(--spacing-md)">
+                    <p class="policy-card__title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>您提供的資訊</p>
+                    <ul>
+                        <li>手動記錄的血壓讀數</li>
+                        <li>添加至測量值的備註和脈絡說明</li>
+                        <li>應用程式偏好設定</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="policy-divider"></div>
+
+        <section class="policy-section" id="healthkit">
+            <div class="policy-section__header">
+                <div class="policy-section__icon policy-section__icon--rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+                <h2 class="policy-section__title">2. HealthKit 與健康資料</h2>
+            </div>
+            <div class="policy-section__body">
+                <p>Pressure Control 與 Apple HealthKit 整合，以讀取和顯示您的健康指標。我們僅要求應用程式核心功能所需的資料類型存取權限。</p>
+                <div class="policy-data-grid">
+                    <div class="policy-data-item"><span class="policy-data-item__icon">&#x2764;&#xFE0F;</span><div class="policy-data-item__text"><span class="policy-data-item__label">血壓</span>收縮壓與舒張壓讀數</div></div>
+                    <div class="policy-data-item"><span class="policy-data-item__icon">&#x1F493;</span><div class="policy-data-item__text"><span class="policy-data-item__label">心率</span>活動心率（BPM）</div></div>
+                    <div class="policy-data-item"><span class="policy-data-item__icon">&#x1FAC0;</span><div class="policy-data-item__text"><span class="policy-data-item__label">靜息心率</span>靜息狀態 BPM</div></div>
+                    <div class="policy-data-item"><span class="policy-data-item__icon">&#x1F6B6;</span><div class="policy-data-item__text"><span class="policy-data-item__label">步行心率</span>步行平均 BPM</div></div>
+                    <div class="policy-data-item"><span class="policy-data-item__icon">&#x1F4CA;</span><div class="policy-data-item__text"><span class="policy-data-item__label">心率變異性</span>HRV（SDNN）</div></div>
+                    <div class="policy-data-item"><span class="policy-data-item__icon">&#x1F504;</span><div class="policy-data-item__text"><span class="policy-data-item__label">心率恢復</span>運動後 1 分鐘恢復</div></div>
+                    <div class="policy-data-item"><span class="policy-data-item__icon">&#x1FA78;</span><div class="policy-data-item__text"><span class="policy-data-item__label">血氧</span>SpO&#x2082; 飽和度</div></div>
+                    <div class="policy-data-item"><span class="policy-data-item__icon">&#x1F32C;&#xFE0F;</span><div class="policy-data-item__text"><span class="policy-data-item__label">呼吸頻率</span>每分鐘呼吸次數</div></div>
+                    <div class="policy-data-item"><span class="policy-data-item__icon">&#x1F3C3;</span><div class="policy-data-item__text"><span class="policy-data-item__label">VO2 max</span>心肺健康水平</div></div>
+                    <div class="policy-data-item"><span class="policy-data-item__icon">&#x1F634;</span><div class="policy-data-item__text"><span class="policy-data-item__label">睡眠</span>時長與品質階段</div></div>
+                    <div class="policy-data-item"><span class="policy-data-item__icon">&#x1F45F;</span><div class="policy-data-item__text"><span class="policy-data-item__label">步數</span>每日步數</div></div>
+                    <div class="policy-data-item"><span class="policy-data-item__icon">&#x26A1;</span><div class="policy-data-item__text"><span class="policy-data-item__label">主動消耗</span>活動期間消耗的卡路里</div></div>
+                    <div class="policy-data-item"><span class="policy-data-item__icon">&#x1F50B;</span><div class="policy-data-item__text"><span class="policy-data-item__label">基礎消耗</span>靜息代謝卡路里</div></div>
+                    <div class="policy-data-item"><span class="policy-data-item__icon">&#x23F1;&#xFE0F;</span><div class="policy-data-item__text"><span class="policy-data-item__label">鍛煉時間</span>Apple 鍛煉分鐘數</div></div>
+                    <div class="policy-data-item"><span class="policy-data-item__icon">&#x1F9D8;</span><div class="policy-data-item__text"><span class="policy-data-item__label">正念冥想</span>冥想與專注練習</div></div>
+                </div>
+                <div class="policy-card policy-card--highlight" style="margin-top:var(--spacing-lg)">
+                    <p class="policy-card__title policy-card__title--accent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>您的健康資料保留在您的裝置上</p>
+                    <p>從 HealthKit 讀取的健康資料在您的裝置上本機處理和顯示。我們不會將原始健康資料上傳或儲存至我們的伺服器。</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="policy-divider"></div>
+
+        <section class="policy-section" id="openai">
+            <div class="policy-section__header">
+                <div class="policy-section__icon policy-section__icon--purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+                <h2 class="policy-section__title">3. AI 報告（OpenAI）</h2>
+            </div>
+            <div class="policy-section__body">
+                <p>Pressure Control 提供選用的 AI 功能，使用 OpenAI 的語言模型產生個人化每週健康報告。<span class="policy-badge policy-badge--optional">選用</span></p>
+                <div class="policy-card policy-card--highlight">
+                    <p class="policy-card__title policy-card__title--accent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>需要明確同意</p>
+                    <p>此功能<strong>預設為停用</strong>。僅在您於設定中明確啟用並同意相關條款後才會啟動。需要有效的高級訂閱。您可隨時在<strong>設定 &gt; AI 報告 &gt; 停用</strong>中撤回同意。</p>
+                </div>
+                <h3 style="font-size:var(--font-size-lg);font-weight:700;color:var(--color-text-primary);margin:var(--spacing-lg) 0 var(--spacing-md)">傳送給 OpenAI 的資料</h3>
+                <p>當 AI 功能啟用時，我們向 OpenAI API 傳送您健康趨勢的<strong>結構化匿名摘要</strong>。傳送的資料<strong>不</strong>包含：</p>
+                <ul>
+                    <li>您的姓名、電子郵件地址或任何個人識別碼</li>
+                    <li>裝置識別碼或帳戶資訊</li>
+                    <li>原始或帶時間戳記的個別健康讀數</li>
+                    <li>位置資料</li>
+                </ul>
+                <p>傳送的是彙總統計摘要，例如：</p>
+                <div class="policy-card">
+                    <ul>
+                        <li>本週平均收縮壓/舒張壓</li>
+                        <li>平均靜息心率</li>
+                        <li>每週 HRV 趨勢（改善中 / 穩定 / 下降中）</li>
+                        <li>平均睡眠時長與睡眠品質分數</li>
+                        <li>平均每日步數及運動時間</li>
+                    </ul>
+                </div>
+                <div class="policy-card policy-card--warning" style="margin-top:var(--spacing-md)">
+                    <p class="policy-card__title policy-card__title--warning"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>OpenAI 的資料處理</p>
+                    <p>匿名健康摘要由 OpenAI 依其隱私權政策處理。建議閱覽 <a href="https://openai.com/policies/privacy-policy" target="_blank" rel="noopener noreferrer">OpenAI 隱私權政策</a>。OpenAI 表示，透過 API 提交的資料預設不用於訓練其模型。</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="policy-divider"></div>
+
+        <section class="policy-section" id="analytics">
+            <div class="policy-section__header">
+                <div class="policy-section__icon policy-section__icon--amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+                <h2 class="policy-section__title">4. 分析與當機報告</h2>
+            </div>
+            <div class="policy-section__body">
+                <p>我們使用 Firebase（Google）來提升應用程式穩定性：</p>
+                <div class="policy-card">
+                    <ul>
+                        <li><strong>Firebase Crashlytics</strong> — 收集當機報告以識別並修復錯誤。不包含健康資料。</li>
+                        <li><strong>Firebase Analytics</strong> — 收集匿名使用事件。不收集個人身分識別資訊。</li>
+                    </ul>
+                </div>
+                <p style="margin-top:var(--spacing-md)">Google 隱私權政策：<a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google 隱私權政策</a></p>
+            </div>
+        </section>
+
+        <div class="policy-divider"></div>
+
+        <section class="policy-section" id="sharing">
+            <div class="policy-section__header">
+                <div class="policy-section__icon policy-section__icon--emerald"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></div>
+                <h2 class="policy-section__title">5. 資料共享</h2>
+            </div>
+            <div class="policy-section__body">
+                <p><strong>我們不出售您的個人資料。</strong>資料僅在以下有限情況下共享：</p>
+                <ul>
+                    <li><strong>服務供應商</strong> — Firebase（Google）用於診斷和分析，OpenAI 僅在您啟用 AI 報告時使用。</li>
+                    <li><strong>法律要求</strong> — 適用法律或法院命令要求時。</li>
+                    <li><strong>業務轉讓</strong> — 合併或收購時。</li>
+                    <li><strong>您的同意</strong> — 獲得您明確授權時。</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="policy-divider"></div>
+
+        <section class="policy-section" id="retention">
+            <div class="policy-section__header">
+                <div class="policy-section__icon policy-section__icon--slate"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+                <h2 class="policy-section__title">6. 資料保留與安全</h2>
+            </div>
+            <div class="policy-section__body">
+                <p>您的健康資料完全保留在您的裝置和 Apple 的 HealthKit 生態系中——我們不在伺服器上儲存。Firebase 的匿名使用資料保留最多 14 個月。</p>
+                <p>我們採用業界標準安全措施保護所有處理的資料。</p>
+            </div>
+        </section>
+
+        <div class="policy-divider"></div>
+
+        <section class="policy-section" id="children">
+            <div class="policy-section__header">
+                <div class="policy-section__icon policy-section__icon--rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                <h2 class="policy-section__title">7. 兒童隱私</h2>
+            </div>
+            <div class="policy-section__body">
+                <p>Pressure Control 不面向 13 歲以下兒童。我們不會故意收集兒童的個人資訊。如您認為我們無意中收集了此類資料，請立即聯絡我們。</p>
+            </div>
+        </section>
+
+        <div class="policy-divider"></div>
+
+        <section class="policy-section" id="rights">
+            <div class="policy-section__header">
+                <div class="policy-section__icon policy-section__icon--blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                <h2 class="policy-section__title">8. 您的權利</h2>
+            </div>
+            <div class="policy-section__body">
+                <p>由於我們不在伺服器上儲存個人可識別資料，您的權利主要透過應用程式和 iOS 的內建控制項行使：</p>
+                <ul>
+                    <li><strong>刪除本機資料</strong> — 您可直接從應用程式設定中刪除所有記錄的資料。</li>
+                    <li><strong>撤回 AI 同意</strong> — 隨時從設定 &gt; AI 報告停用 AI 報告，不影響其他功能。</li>
+                    <li><strong>撤銷 HealthKit 存取</strong> — 在 iOS 設定 &gt; 隱私權與安全性 &gt; 健康中移除應用程式存取權限。</li>
+                    <li><strong>Firebase 資料</strong> — 由於以匿名方式收集，無法關聯至特定使用者。詳情請參閱 Google 的<a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">隱私權政策</a>。</li>
+                </ul>
+                <p>如有其他請求，請透過支援表單聯絡我們。</p>
+            </div>
+        </section>
+
+        <div class="policy-divider"></div>
+
+        <section class="policy-section" id="contact">
+            <div class="policy-section__header">
+                <div class="policy-section__icon policy-section__icon--emerald"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+                <h2 class="policy-section__title">9. 聯絡我們</h2>
+            </div>
+            <div class="policy-section__body">
+                <p>如有關於本隱私權政策的問題，請使用我們的支援表單或直接聯絡我們：</p>
+                <div class="policy-card policy-card--highlight">
+                    <p class="policy-card__title policy-card__title--accent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>聯絡支援</p>
+                    <p>透過我們的<a href="../../zh-TW/support/index.html">支援頁面</a>直接傳送訊息——無需電子郵件用戶端。</p>
+                </div>
+                <div class="policy-card" style="margin-top:var(--spacing-md)">
+                    <ul>
+                        <li><strong>X (Twitter)：</strong><a href="https://x.com/BLOODPRESSURE_A" target="_blank" rel="noopener noreferrer">@BLOODPRESSURE_A</a></li>
+                        <li><strong>開發者：</strong>Hipolito Arias，西班牙</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <img src="../../content/image/xjf2048aaxk5vkiasgrz.jpg" alt="Pressure Control" class="footer__logo" />
+                    <span class="footer__brand-name">Pressure Control</span>
+                    <p class="footer__tagline">您的健康，輕鬆掌握。</p>
+                </div>
+                <div class="footer__links-group">
+                    <h4 class="footer__links-title">產品</h4>
+                    <a href="../../zh-TW/index.html#features" class="footer__link">功能</a>
+                    <a href="../../zh-TW/index.html#pricing" class="footer__link">定價</a>
+                </div>
+                <div class="footer__links-group">
+                    <h4 class="footer__links-title">法律</h4>
+                    <a href="../../zh-TW/privacy/index.html" class="footer__link">隱私權政策</a>
+                </div>
+                <div class="footer__links-group">
+                    <h4 class="footer__links-title">支援</h4>
+                    <a href="../../zh-TW/support/index.html" class="footer__link">說明中心</a>
+                    <a href="mailto:pressurecontrol.app@gmail.com" class="footer__link">聯絡我們</a>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">&copy; <script>document.write(new Date().getFullYear())</script><noscript>2025</noscript> Pressure Control. 版權所有。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileToggle = document.querySelector('.nav__mobile-toggle');
+        const navLinks = document.querySelector('.nav__links');
+        mobileToggle?.addEventListener('click', () => { navLinks?.classList.toggle('nav__links--active'); mobileToggle.classList.toggle('nav__mobile-toggle--active'); });
+        const langBtn = document.querySelector('.nav__lang-btn');
+        const langDropdown = document.querySelector('.nav__lang-dropdown');
+        langBtn?.addEventListener('click', () => { langDropdown?.classList.toggle('nav__lang-dropdown--active'); });
+        document.addEventListener('click', (e) => { if (!e.target.closest('.nav__lang')) langDropdown?.classList.remove('nav__lang-dropdown--active'); });
+        const nav = document.querySelector('.nav');
+        window.addEventListener('scroll', () => { nav?.classList.toggle('nav--scrolled', window.scrollY > 50); });
+    </script>
+</body>
+</html>
