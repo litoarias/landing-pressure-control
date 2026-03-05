@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pressure Control - 스마트 혈압 모니터링</title>
+
+    <meta name="description" content="Apple Health 및 Apple Watch 연동으로 혈압, 스트레스, 수면을 추적하세요. 명확한 차트, 기록 및 주간 AI 보고서." />
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+
+    <link rel="icon" href="../assets/favicon.png" />
+
+    <meta property="og:title" content="Pressure Control - 스마트 혈압 모니터링" />
+    <meta property="og:description" content="Apple Health 및 Apple Watch 연동으로 혈압, 스트레스, 수면을 추적하세요." />
+    <meta property="og:image" content="../assets/og-image.png" />
+
+    <link rel="canonical" href="https://litoarias.github.io/landing-pressure-control/ko/" />
+    <link rel="alternate" hreflang="en" href="https://litoarias.github.io/landing-pressure-control/" />
+    <link rel="alternate" hreflang="es" href="https://litoarias.github.io/landing-pressure-control/es/" />
+    <link rel="alternate" hreflang="fr" href="https://litoarias.github.io/landing-pressure-control/fr/" />
+    <link rel="alternate" hreflang="de" href="https://litoarias.github.io/landing-pressure-control/de/" />
+    <link rel="alternate" hreflang="it" href="https://litoarias.github.io/landing-pressure-control/it/" />
+    <link rel="alternate" hreflang="ja" href="https://litoarias.github.io/landing-pressure-control/ja/" />
+    <link rel="alternate" hreflang="zh" href="https://litoarias.github.io/landing-pressure-control/zh/" />
+    <link rel="alternate" hreflang="ar" href="https://litoarias.github.io/landing-pressure-control/ar/" />
+    <link rel="alternate" hreflang="zh-TW" href="https://litoarias.github.io/landing-pressure-control/zh-TW/" />
+    <link rel="alternate" hreflang="ko" href="https://litoarias.github.io/landing-pressure-control/ko/" />
+    <link rel="alternate" hreflang="pt-BR" href="https://litoarias.github.io/landing-pressure-control/pt/" />
+    <link rel="alternate" hreflang="ru" href="https://litoarias.github.io/landing-pressure-control/ru/" />
+    <link rel="alternate" hreflang="x-default" href="https://litoarias.github.io/landing-pressure-control/" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="https://litoarias.github.io/landing-pressure-control/assets/style.css" />
+
+    <script>
+        (function () {
+            const stored = localStorage.getItem("pc_lang");
+            if (stored && stored !== "ko") {
+                const map = { en: "../index.html", es: "../es/index.html", fr: "../fr/index.html", de: "../de/index.html", it: "../it/index.html", ja: "../ja/index.html", zh: "../zh/index.html", ar: "../ar/index.html", "zh-TW": "../zh-TW/index.html", pt: "../pt/index.html", ru: "../ru/index.html" };
+                if (map[stored]) window.location.replace(new URL(map[stored], window.location.href).href);
+            }
+        })();
+    </script>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav__container">
+            <a href="./index.html" class="nav__logo">
+                <img src="../content/image/xjf2048aaxk5vkiasgrz.jpg" alt="Pressure Control" class="nav__logo-img" />
+                <span class="nav__logo-text">Pressure Control</span>
+            </a>
+            <div class="nav__links">
+                <a href="#features" class="nav__link">기능</a>
+                <a href="#screenshots" class="nav__link">스크린샷</a>
+                <a href="#pricing" class="nav__link">가격</a>
+                <a href="../support/index.html" class="nav__link">지원</a>
+                <div class="nav__lang">
+                    <button class="nav__lang-btn" aria-label="언어 변경" type="button">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                        </svg>
+                        KO
+                    </button>
+                    <div class="nav__lang-dropdown">
+                        <a href="../index.html" class="nav__lang-option">English</a>
+                        <a href="../ar/index.html" class="nav__lang-option">العربية</a>
+                        <a href="../zh/index.html" class="nav__lang-option">简体中文</a>
+                        <a href="../zh-TW/index.html" class="nav__lang-option">繁體中文</a>
+                        <a href="../fr/index.html" class="nav__lang-option">Français</a>
+                        <a href="../de/index.html" class="nav__lang-option">Deutsch</a>
+                        <a href="../it/index.html" class="nav__lang-option">Italiano</a>
+                        <a href="../ja/index.html" class="nav__lang-option">日本語</a>
+                        <a href="../ko/index.html" class="nav__lang-option nav__lang-option--active">한국어</a>
+                        <a href="../pt/index.html" class="nav__lang-option">Português</a>
+                        <a href="../ru/index.html" class="nav__lang-option">Русский</a>
+                        <a href="../es/index.html" class="nav__lang-option">Español</a>
+                    </div>
+                </div>
+                <a href="https://apps.apple.com/us/app/pressure-control-tracker/id6738280822" class="nav__cta" target="_blank">
+                    다운로드
+                </a>
+            </div>
+            <button class="nav__mobile-toggle" aria-label="메뉴 열기">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero__background">
+            <div class="hero__gradient"></div>
+            <div class="hero__orb hero__orb--1"></div>
+            <div class="hero__orb hero__orb--2"></div>
+        </div>
+        <div class="hero__container">
+            <div class="hero__content">
+                <div class="hero__badge">
+                    <span class="hero__badge-dot"></span>
+                    건강 & 웰니스
+                </div>
+                <h1 class="hero__title">
+                    혈압을
+                    <span class="hero__title-gradient">관리하세요</span>
+                </h1>
+                <p class="hero__subtitle">
+                    하나의 스마트 앱으로 혈압, 스트레스, 수면을 모니터링하세요.
+                    Apple Health와 Apple Watch와 완벽하게 연동됩니다.
+                </p>
+                <div class="hero__actions">
+                    <a href="https://apps.apple.com/us/app/pressure-control-tracker/id6738280822" class="btn btn--primary" target="_blank">
+                        <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                        </svg>
+                        iOS 다운로드
+                    </a>
+                    <a href="#features" class="btn btn--secondary">더 알아보기</a>
+                </div>
+                <div class="hero__stats">
+                    <div class="hero__stat">
+                        <span class="hero__stat-value">5.0</span>
+                        <span class="hero__stat-label">앱스토어 평점</span>
+                    </div>
+                    <div class="hero__stat-divider"></div>
+                    <div class="hero__stat">
+                        <span class="hero__stat-value">12</span>
+                        <span class="hero__stat-label">언어</span>
+                    </div>
+                    <div class="hero__stat-divider"></div>
+                    <div class="hero__stat">
+                        <span class="hero__stat-value">v1.11</span>
+                        <span class="hero__stat-label">최신 버전</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero__visual">
+                <div class="hero__phone">
+                    <div class="hero__phone-frame">
+                        <img src="../content/image/eruy1h8m5gm5fyy31j3.jpeg" alt="Pressure Control 앱 스크린샷" class="hero__phone-screen" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="features__container">
+            <div class="features__header">
+                <span class="features__label">기능</span>
+                <h2 class="features__title">건강 관리에<br />필요한 모든 것</h2>
+                <p class="features__description">정확성과 간결함을 고려하여 설계된 종합 건강 추적 기능.</p>
+            </div>
+            <div class="features__grid">
+                <div class="feature-card">
+                    <div class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+                    <h3 class="feature-card__title">실시간 모니터링</h3>
+                    <p class="feature-card__text">의료 수준의 정확도로 혈압과 심박수를 실시간으로 추적하세요.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+                    <h3 class="feature-card__title">건강 기록</h3>
+                    <p class="feature-card__text">상세한 차트와 추세 분석으로 전체 건강 기록에 접근하세요.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+                    <h3 class="feature-card__title">Apple Health 동기화</h3>
+                    <p class="feature-card__text">Apple Health와 Apple Watch와 원활하게 동기화하여 통합된 건강 데이터를 얻으세요.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+                    <h3 class="feature-card__title">AI 기반 인사이트</h3>
+                    <p class="feature-card__text">개인화된 추천과 함께 주간 AI 생성 건강 보고서를 받으세요.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
+                    <h3 class="feature-card__title">스마트 알림</h3>
+                    <p class="feature-card__text">비정상적인 패턴과 중요한 건강 변화에 대해 알림을 받으세요.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+                    <h3 class="feature-card__title">보고서 내보내기</h3>
+                    <p class="feature-card__text">의료 제공자와 공유하기 위해 데이터를 PDF 또는 CSV로 내보내세요.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="screenshots" class="screenshots">
+        <div class="screenshots__container">
+            <div class="screenshots__header">
+                <span class="screenshots__label">앱 미리보기</span>
+                <h2 class="screenshots__title">실제로 보기</h2>
+                <p class="screenshots__description">직관적이고 아름다운 경험을 위해 세심하게 설계되었습니다.</p>
+            </div>
+            <div class="screenshots__carousel">
+                <div class="screenshots__track">
+                    <div class="screenshot-card"><img src="../content/image/eruy1h8m5gm5fyy31j3.jpeg" alt="대시보드" class="screenshot-card__img" /></div>
+                    <div class="screenshot-card"><img src="../content/image/w25g7l3phbv2t5i1jce.jpeg" alt="건강 차트" class="screenshot-card__img" /></div>
+                    <div class="screenshot-card"><img src="../content/image/8i3n38wxf0xh0ama4yc.jpeg" alt="추적 기록" class="screenshot-card__img" /></div>
+                    <div class="screenshot-card"><img src="../content/image/u0ylt6tgfgceg8frl8t.jpeg" alt="AI 보고서" class="screenshot-card__img" /></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="pricing">
+        <div class="pricing__container">
+            <div class="pricing__header">
+                <span class="pricing__label">가격</span>
+                <h2 class="pricing__title">무료로 시작하세요</h2>
+                <p class="pricing__description">오늘 건강 여정을 시작하세요. 고급 기능을 위해 언제든지 업그레이드하세요.</p>
+            </div>
+            <div class="pricing__cards pricing__cards--three">
+                <div class="pricing-card">
+                    <div class="pricing-card__header">
+                        <h3 class="pricing-card__name">무료</h3>
+                        <div class="pricing-card__price">
+                            <span class="pricing-card__amount">$0</span>
+                            <span class="pricing-card__period">영구</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-card__features">
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>혈압 및 심박수 기록</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>기본 차트가 있는 기록</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>HealthKit 및 Apple Watch 동기화</li>
+                    </ul>
+                    <a href="https://apps.apple.com/us/app/pressure-control-tracker/id6738280822" class="pricing-card__btn pricing-card__btn--secondary" target="_blank">시작하기</a>
+                </div>
+                <div class="pricing-card pricing-card--featured">
+                    <div class="pricing-card__badge">최고의 가치</div>
+                    <div class="pricing-card__header">
+                        <h3 class="pricing-card__name">연간</h3>
+                        <div class="pricing-card__price">
+                            <span class="pricing-card__amount">$14.99</span>
+                            <span class="pricing-card__period">/년</span>
+                        </div>
+                        <span class="pricing-card__savings">37% 절약</span>
+                    </div>
+                    <ul class="pricing-card__features">
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>무료의 모든 것</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>주간 AI 건강 보고서</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>패턴 감지 및 알림</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>PDF 및 CSV 내보내기</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>스트레스 및 수면 분석</li>
+                    </ul>
+                    <a href="https://apps.apple.com/us/app/pressure-control-tracker/id6738280822" class="pricing-card__btn pricing-card__btn--primary" target="_blank">연간 구독</a>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-card__header">
+                        <h3 class="pricing-card__name">월간</h3>
+                        <div class="pricing-card__price">
+                            <span class="pricing-card__amount">$1.99</span>
+                            <span class="pricing-card__period">/월</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-card__features">
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>무료의 모든 것</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>주간 AI 건강 보고서</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>패턴 감지 및 알림</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>PDF 및 CSV 내보내기</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>스트레스 및 수면 분석</li>
+                    </ul>
+                    <a href="https://apps.apple.com/us/app/pressure-control-tracker/id6738280822" class="pricing-card__btn pricing-card__btn--secondary" target="_blank">월간 구독</a>
+                </div>
+            </div>
+            <div class="pricing__lifetime">
+                <div class="pricing__lifetime-content">
+                    <div class="pricing__lifetime-info">
+                        <h3 class="pricing__lifetime-title">평생 이용</h3>
+                        <p class="pricing__lifetime-text">일회성 결제, 영원히 당신의 것. 반복 요금 없음.</p>
+                    </div>
+                    <div class="pricing__lifetime-price">
+                        <span class="pricing__lifetime-amount">$49.99</span>
+                        <a href="https://apps.apple.com/us/app/pressure-control-tracker/id6738280822" class="btn btn--primary" target="_blank">평생 이용권 받기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="languages">
+        <div class="languages__container">
+            <h3 class="languages__title">12개 언어로 제공</h3>
+            <div class="languages__list">
+                <a href="../index.html" class="languages__item">English</a>
+                <a href="../ar/index.html" class="languages__item">العربية</a>
+                <a href="../zh/index.html" class="languages__item">简体中文</a>
+                <a href="../zh-TW/index.html" class="languages__item">繁體中文</a>
+                <a href="../fr/index.html" class="languages__item">Français</a>
+                <a href="../de/index.html" class="languages__item">Deutsch</a>
+                <a href="../it/index.html" class="languages__item">Italiano</a>
+                <a href="../ja/index.html" class="languages__item">日本語</a>
+                <a href="../ko/index.html" class="languages__item languages__item--active">한국어</a>
+                <a href="../pt/index.html" class="languages__item">Português</a>
+                <a href="../ru/index.html" class="languages__item">Русский</a>
+                <a href="../es/index.html" class="languages__item">Español</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="cta__container">
+            <div class="cta__content">
+                <h2 class="cta__title">오늘 건강 여정을 시작하세요</h2>
+                <p class="cta__text">지금 다운로드하고 더 나은 건강 관리를 향한 첫 걸음을 내딛으세요.</p>
+                <a href="https://apps.apple.com/us/app/pressure-control-tracker/id6738280822" class="btn btn--primary btn--large" target="_blank">
+                    <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                    무료 다운로드
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <img src="../content/image/xjf2048aaxk5vkiasgrz.jpg" alt="Pressure Control" class="footer__logo" />
+                    <span class="footer__brand-name">Pressure Control</span>
+                    <p class="footer__tagline">당신의 건강, 간편하게.</p>
+                </div>
+                <div class="footer__links-group">
+                    <h4 class="footer__links-title">제품</h4>
+                    <a href="#features" class="footer__link">기능</a>
+                    <a href="#pricing" class="footer__link">가격</a>
+                    <a href="#screenshots" class="footer__link">스크린샷</a>
+                </div>
+                <div class="footer__links-group">
+                    <h4 class="footer__links-title">법적</h4>
+                    <a href="https://litoarias.github.io/pressurecontrol-privacy" class="footer__link">개인정보 처리방침</a>
+                    <a href="#" class="footer__link">이용약관</a>
+                </div>
+                <div class="footer__links-group">
+                    <h4 class="footer__links-title">지원</h4>
+                    <a href="../support/index.html" class="footer__link">도움말 센터</a>
+                    <a href="mailto:pressurecontrol.app@gmail.com" class="footer__link">문의하기</a>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">&copy; <script>document.write(new Date().getFullYear())</script><noscript>2025</noscript> Pressure Control. 모든 권리 보유.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        localStorage.setItem('pc_lang', 'ko');
+        const mobileToggle = document.querySelector('.nav__mobile-toggle');
+        const navLinks = document.querySelector('.nav__links');
+        mobileToggle?.addEventListener('click', () => { navLinks?.classList.toggle('nav__links--active'); mobileToggle.classList.toggle('nav__mobile-toggle--active'); });
+        const langBtn = document.querySelector('.nav__lang-btn');
+        const langDropdown = document.querySelector('.nav__lang-dropdown');
+        langBtn?.addEventListener('click', () => { langDropdown?.classList.toggle('nav__lang-dropdown--active'); });
+        document.addEventListener('click', (e) => { if (!e.target.closest('.nav__lang')) langDropdown?.classList.remove('nav__lang-dropdown--active'); });
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => { anchor.addEventListener('click', function (e) { e.preventDefault(); document.querySelector(this.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth', block: 'start' }); navLinks?.classList.remove('nav__links--active'); mobileToggle?.classList.remove('nav__mobile-toggle--active'); langDropdown?.classList.remove('nav__lang-dropdown--active'); }); });
+        const nav = document.querySelector('.nav');
+        window.addEventListener('scroll', () => { nav?.classList.toggle('nav--scrolled', window.scrollY > 50); });
+        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('animate-in'); }); }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        document.querySelectorAll('.feature-card, .pricing-card, .screenshot-card').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
