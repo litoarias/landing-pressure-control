@@ -27,8 +27,6 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://litoarias.github.io/landing-pressure-control/assets/style.css" />
 </head>
 <body>
@@ -43,6 +41,7 @@
                 <a href="#features" class="nav__link">Funciones</a>
                 <a href="#screenshots" class="nav__link">Capturas</a>
                 <a href="#pricing" class="nav__link">Precios</a>
+                <a href="../support/index.html" class="nav__link">Soporte</a>
                 <div class="nav__lang">
                     <button class="nav__lang-btn" aria-label="Cambiar idioma" type="button">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -53,12 +52,17 @@
                     </button>
                     <div class="nav__lang-dropdown">
                         <a href="../index.html" class="nav__lang-option">English</a>
-                        <a href="../es/index.html" class="nav__lang-option nav__lang-option--active">Espanol</a>
-                        <a href="../fr/index.html" class="nav__lang-option">Francais</a>
+                        <a href="../ar/index.html" class="nav__lang-option">العربية</a>
+                        <a href="../zh/index.html" class="nav__lang-option">简体中文</a>
+                        <a href="../zh-TW/index.html" class="nav__lang-option">繁體中文</a>
+                        <a href="../fr/index.html" class="nav__lang-option">Français</a>
                         <a href="../de/index.html" class="nav__lang-option">Deutsch</a>
                         <a href="../it/index.html" class="nav__lang-option">Italiano</a>
-                        <a href="../ja/index.html" class="nav__lang-option">Japanese</a>
-                        <a href="../zh/index.html" class="nav__lang-option">Chinese</a>
+                        <a href="../ja/index.html" class="nav__lang-option">日本語</a>
+                        <a href="../ko/index.html" class="nav__lang-option">한국어</a>
+                        <a href="../pt/index.html" class="nav__lang-option">Português</a>
+                        <a href="../ru/index.html" class="nav__lang-option">Русский</a>
+                        <a href="../es/index.html" class="nav__lang-option nav__lang-option--active">Español</a>
                     </div>
                 </div>
                 <a href="https://apps.apple.com/us/app/pressure-control-tracker/id6738280822" class="nav__cta" target="_blank">
@@ -112,7 +116,7 @@
                     </div>
                     <div class="hero__stat-divider"></div>
                     <div class="hero__stat">
-                        <span class="hero__stat-value">7</span>
+                        <span class="hero__stat-value">12</span>
                         <span class="hero__stat-label">Idiomas</span>
                     </div>
                     <div class="hero__stat-divider"></div>
@@ -394,15 +398,20 @@
     <!-- Languages Section -->
     <section class="languages">
         <div class="languages__container">
-            <h3 class="languages__title">Disponible en 7 idiomas</h3>
+            <h3 class="languages__title">Disponible en 12 idiomas</h3>
             <div class="languages__list">
                 <a href="../index.html" class="languages__item">English</a>
-                <a href="../es/index.html" class="languages__item languages__item--active">Espanol</a>
-                <a href="../fr/index.html" class="languages__item">Francais</a>
+                <a href="../ar/index.html" class="languages__item">العربية</a>
+                <a href="../zh/index.html" class="languages__item">简体中文</a>
+                <a href="../zh-TW/index.html" class="languages__item">繁體中文</a>
+                <a href="../fr/index.html" class="languages__item">Français</a>
                 <a href="../de/index.html" class="languages__item">Deutsch</a>
                 <a href="../it/index.html" class="languages__item">Italiano</a>
-                <a href="../ja/index.html" class="languages__item">Japanese</a>
-                <a href="../zh/index.html" class="languages__item">Chinese</a>
+                <a href="../ja/index.html" class="languages__item">日本語</a>
+                <a href="../ko/index.html" class="languages__item">한국어</a>
+                <a href="../pt/index.html" class="languages__item">Português</a>
+                <a href="../ru/index.html" class="languages__item">Русский</a>
+                <a href="../es/index.html" class="languages__item languages__item--active">Español</a>
             </div>
         </div>
     </section>
@@ -442,6 +451,11 @@
                     <h4 class="footer__links-title">Legal</h4>
                     <a href="https://litoarias.github.io/pressurecontrol-privacy" class="footer__link">Politica de Privacidad</a>
                     <a href="#" class="footer__link">Terminos de Servicio</a>
+                </div>
+                <div class="footer__links-group">
+                    <h4 class="footer__links-title">Soporte</h4>
+                    <a href="../support/index.html" class="footer__link">Centro de ayuda</a>
+                    <a href="mailto:pressurecontrol.app@gmail.com" class="footer__link">Contáctanos</a>
                 </div>
             </div>
             <div class="footer__bottom">
@@ -485,7 +499,7 @@
             if (last === 'index.html' && segments.length > 1) {
                 return segments[segments.length - 2];
             }
-            if (['es', 'fr', 'de', 'it', 'ja', 'zh'].includes(last)) {
+            if (['es', 'fr', 'de', 'it', 'ja', 'zh', 'ar', 'zh-TW', 'ko', 'pt', 'ru'].includes(last)) {
                 return last;
             }
             return 'en';

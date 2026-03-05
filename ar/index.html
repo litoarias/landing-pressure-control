@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pressure Control - Monitoraggio Intelligente della Pressione</title>
-    
-    <meta name="description" content="Monitora pressione sanguigna, stress e sonno con integrazione Apple Health e Apple Watch. Grafici chiari, cronologia e report IA settimanali." />
+    <title>Pressure Control - مراقبة ضغط الدم الذكية</title>
+
+    <meta name="description" content="راقب ضغط الدم والتوتر والنوم مع تكامل Apple Health وApple Watch. رسوم بيانية واضحة وسجل وتقارير أسبوعية بالذكاء الاصطناعي." />
     <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
-    
+
     <link rel="icon" href="../assets/favicon.png" />
-    
-    <meta property="og:title" content="Pressure Control - Monitoraggio Intelligente della Pressione" />
-    <meta property="og:description" content="Monitora pressione sanguigna, stress e sonno con integrazione Apple Health e Apple Watch." />
+
+    <meta property="og:title" content="Pressure Control - مراقبة ضغط الدم الذكية" />
+    <meta property="og:description" content="راقب ضغط الدم والتوتر والنوم مع تكامل Apple Health وApple Watch." />
     <meta property="og:image" content="../assets/og-image.png" />
 
-    <link rel="canonical" href="https://litoarias.github.io/landing-pressure-control/it/" />
+    <link rel="canonical" href="https://litoarias.github.io/landing-pressure-control/ar/" />
     <link rel="alternate" hreflang="en" href="https://litoarias.github.io/landing-pressure-control/" />
     <link rel="alternate" hreflang="es" href="https://litoarias.github.io/landing-pressure-control/es/" />
     <link rel="alternate" hreflang="fr" href="https://litoarias.github.io/landing-pressure-control/fr/" />
@@ -23,11 +23,27 @@
     <link rel="alternate" hreflang="it" href="https://litoarias.github.io/landing-pressure-control/it/" />
     <link rel="alternate" hreflang="ja" href="https://litoarias.github.io/landing-pressure-control/ja/" />
     <link rel="alternate" hreflang="zh" href="https://litoarias.github.io/landing-pressure-control/zh/" />
+    <link rel="alternate" hreflang="ar" href="https://litoarias.github.io/landing-pressure-control/ar/" />
+    <link rel="alternate" hreflang="zh-TW" href="https://litoarias.github.io/landing-pressure-control/zh-TW/" />
+    <link rel="alternate" hreflang="ko" href="https://litoarias.github.io/landing-pressure-control/ko/" />
+    <link rel="alternate" hreflang="pt-BR" href="https://litoarias.github.io/landing-pressure-control/pt/" />
+    <link rel="alternate" hreflang="ru" href="https://litoarias.github.io/landing-pressure-control/ru/" />
     <link rel="alternate" hreflang="x-default" href="https://litoarias.github.io/landing-pressure-control/" />
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link rel="stylesheet" href="https://litoarias.github.io/landing-pressure-control/assets/style.css" />
+
+    <script>
+        (function () {
+            const stored = localStorage.getItem("pc_lang");
+            if (stored && stored !== "ar") {
+                const map = { en: "../index.html", es: "../es/index.html", fr: "../fr/index.html", de: "../de/index.html", it: "../it/index.html", ja: "../ja/index.html", zh: "../zh/index.html", "zh-TW": "../zh-TW/index.html", ko: "../ko/index.html", pt: "../pt/index.html", ru: "../ru/index.html" };
+                if (map[stored]) window.location.replace(new URL(map[stored], window.location.href).href);
+            }
+        })();
+    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -38,26 +54,26 @@
                 <span class="nav__logo-text">Pressure Control</span>
             </a>
             <div class="nav__links">
-                <a href="#features" class="nav__link">Funzionalita</a>
-                <a href="#screenshots" class="nav__link">Screenshot</a>
-                <a href="#pricing" class="nav__link">Prezzi</a>
-                <a href="../support/index.html" class="nav__link">Supporto</a>
+                <a href="#features" class="nav__link">الميزات</a>
+                <a href="#screenshots" class="nav__link">لقطات الشاشة</a>
+                <a href="#pricing" class="nav__link">الأسعار</a>
+                <a href="../support/index.html" class="nav__link">الدعم</a>
                 <div class="nav__lang">
-                    <button class="nav__lang-btn" aria-label="Cambia lingua" type="button">
+                    <button class="nav__lang-btn" aria-label="تغيير اللغة" type="button">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <circle cx="12" cy="12" r="10"/>
                             <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
                         </svg>
-                        IT
+                        AR
                     </button>
                     <div class="nav__lang-dropdown">
                         <a href="../index.html" class="nav__lang-option">English</a>
-                        <a href="../ar/index.html" class="nav__lang-option">العربية</a>
+                        <a href="../ar/index.html" class="nav__lang-option nav__lang-option--active">العربية</a>
                         <a href="../zh/index.html" class="nav__lang-option">简体中文</a>
                         <a href="../zh-TW/index.html" class="nav__lang-option">繁體中文</a>
                         <a href="../fr/index.html" class="nav__lang-option">Français</a>
                         <a href="../de/index.html" class="nav__lang-option">Deutsch</a>
-                        <a href="../it/index.html" class="nav__lang-option nav__lang-option--active">Italiano</a>
+                        <a href="../it/index.html" class="nav__lang-option">Italiano</a>
                         <a href="../ja/index.html" class="nav__lang-option">日本語</a>
                         <a href="../ko/index.html" class="nav__lang-option">한국어</a>
                         <a href="../pt/index.html" class="nav__lang-option">Português</a>
@@ -66,10 +82,10 @@
                     </div>
                 </div>
                 <a href="https://apps.apple.com/us/app/pressure-control-tracker/id6738280822" class="nav__cta" target="_blank">
-                    Scarica
+                    تنزيل
                 </a>
             </div>
-            <button class="nav__mobile-toggle" aria-label="Apri menu">
+            <button class="nav__mobile-toggle" aria-label="فتح القائمة">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -88,48 +104,48 @@
             <div class="hero__content">
                 <div class="hero__badge">
                     <span class="hero__badge-dot"></span>
-                    Salute e Benessere
+                    الصحة والعافية
                 </div>
                 <h1 class="hero__title">
-                    Prendi il Controllo della Tua
-                    <span class="hero__title-gradient">Pressione Sanguigna</span>
+                    تحكّم في
+                    <span class="hero__title-gradient">ضغط دمك</span>
                 </h1>
                 <p class="hero__subtitle">
-                    Monitora pressione sanguigna, stress e sonno in un'app intelligente. 
-                    Sincronizzata con Apple Health e Apple Watch.
+                    راقب ضغط الدم والتوتر والنوم في تطبيق ذكي واحد.
+                    متزامن بسلاسة مع Apple Health وApple Watch.
                 </p>
                 <div class="hero__actions">
                     <a href="https://apps.apple.com/us/app/pressure-control-tracker/id6738280822" class="btn btn--primary" target="_blank">
                         <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
                         </svg>
-                        Scarica per iOS
+                        تنزيل لنظام iOS
                     </a>
                     <a href="#features" class="btn btn--secondary">
-                        Scopri di Piu
+                        اعرف المزيد
                     </a>
                 </div>
                 <div class="hero__stats">
                     <div class="hero__stat">
                         <span class="hero__stat-value">5.0</span>
-                        <span class="hero__stat-label">Valutazione App Store</span>
+                        <span class="hero__stat-label">تقييم App Store</span>
                     </div>
                     <div class="hero__stat-divider"></div>
                     <div class="hero__stat">
                         <span class="hero__stat-value">12</span>
-                        <span class="hero__stat-label">Lingue</span>
+                        <span class="hero__stat-label">لغة</span>
                     </div>
                     <div class="hero__stat-divider"></div>
                     <div class="hero__stat">
                         <span class="hero__stat-value">v1.11</span>
-                        <span class="hero__stat-label">Ultima Versione</span>
+                        <span class="hero__stat-label">أحدث إصدار</span>
                     </div>
                 </div>
             </div>
             <div class="hero__visual">
                 <div class="hero__phone">
                     <div class="hero__phone-frame">
-                        <img src="../content/image/eruy1h8m5gm5fyy31j3.jpeg" alt="Screenshot Pressure Control" class="hero__phone-screen" />
+                        <img src="../content/image/eruy1h8m5gm5fyy31j3.jpeg" alt="لقطة شاشة تطبيق Pressure Control" class="hero__phone-screen" />
                     </div>
                 </div>
             </div>
@@ -140,10 +156,10 @@
     <section id="features" class="features">
         <div class="features__container">
             <div class="features__header">
-                <span class="features__label">Funzionalita</span>
-                <h2 class="features__title">Tutto cio di cui hai bisogno per<br />monitorare la tua salute</h2>
+                <span class="features__label">الميزات</span>
+                <h2 class="features__title">كل ما تحتاجه<br />لمراقبة صحتك</h2>
                 <p class="features__description">
-                    Monitoraggio della salute completo progettato con precisione e semplicita.
+                    تتبع صحي شامل مصمم بدقة وبساطة في الاعتبار.
                 </p>
             </div>
             <div class="features__grid">
@@ -153,8 +169,8 @@
                             <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
                         </svg>
                     </div>
-                    <h3 class="feature-card__title">Monitoraggio in Tempo Reale</h3>
-                    <p class="feature-card__text">Traccia la tua pressione sanguigna e frequenza cardiaca con precisione medica in tempo reale.</p>
+                    <h3 class="feature-card__title">مراقبة في الوقت الفعلي</h3>
+                    <p class="feature-card__text">تتبع ضغط الدم ومعدل ضربات القلب بدقة طبية في الوقت الفعلي.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-card__icon">
@@ -163,8 +179,8 @@
                             <path d="M12 6v6l4 2"/>
                         </svg>
                     </div>
-                    <h3 class="feature-card__title">Cronologia Salute</h3>
-                    <p class="feature-card__text">Accedi alla tua cronologia completa con grafici dettagliati e analisi delle tendenze.</p>
+                    <h3 class="feature-card__title">السجل الصحي</h3>
+                    <p class="feature-card__text">الوصول إلى سجلك الصحي الكامل مع الرسوم البيانية التفصيلية وتحليل الاتجاهات.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-card__icon">
@@ -175,8 +191,8 @@
                             <line x1="3" y1="10" x2="21" y2="10"/>
                         </svg>
                     </div>
-                    <h3 class="feature-card__title">Sincronizzazione Apple Health</h3>
-                    <p class="feature-card__text">Sincronizza con Apple Health e Apple Watch per dati sanitari unificati.</p>
+                    <h3 class="feature-card__title">مزامنة Apple Health</h3>
+                    <p class="feature-card__text">تزامن بسلاسة مع Apple Health وApple Watch للحصول على بيانات صحية موحدة.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-card__icon">
@@ -186,8 +202,8 @@
                             <path d="M2 12l10 5 10-5"/>
                         </svg>
                     </div>
-                    <h3 class="feature-card__title">Analisi con IA</h3>
-                    <p class="feature-card__text">Ricevi report settimanali generati dall'IA con raccomandazioni personalizzate.</p>
+                    <h3 class="feature-card__title">رؤى بالذكاء الاصطناعي</h3>
+                    <p class="feature-card__text">احصل على تقارير صحية أسبوعية يولدها الذكاء الاصطناعي مع توصيات مخصصة.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-card__icon">
@@ -196,8 +212,8 @@
                             <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
                         </svg>
                     </div>
-                    <h3 class="feature-card__title">Avvisi Intelligenti</h3>
-                    <p class="feature-card__text">Ricevi notifiche su pattern insoliti e importanti cambiamenti della salute.</p>
+                    <h3 class="feature-card__title">تنبيهات ذكية</h3>
+                    <p class="feature-card__text">احصل على إشعارات بشأن الأنماط غير العادية والتغييرات الصحية المهمة.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-card__icon">
@@ -208,8 +224,8 @@
                             <line x1="16" y1="17" x2="8" y2="17"/>
                         </svg>
                     </div>
-                    <h3 class="feature-card__title">Esporta Report</h3>
-                    <p class="feature-card__text">Esporta i tuoi dati in PDF o CSV per condividerli con il tuo medico.</p>
+                    <h3 class="feature-card__title">تصدير التقارير</h3>
+                    <p class="feature-card__text">صدّر بياناتك إلى PDF أو CSV لمشاركتها مع مزود الرعاية الصحية.</p>
                 </div>
             </div>
         </div>
@@ -219,25 +235,25 @@
     <section id="screenshots" class="screenshots">
         <div class="screenshots__container">
             <div class="screenshots__header">
-                <span class="screenshots__label">Anteprima App</span>
-                <h2 class="screenshots__title">Guardala in azione</h2>
+                <span class="screenshots__label">معاينة التطبيق</span>
+                <h2 class="screenshots__title">شاهده في العمل</h2>
                 <p class="screenshots__description">
-                    Progettata con cura per un'esperienza intuitiva e bella.
+                    مصمم بعناية لتجربة بديهية وجميلة.
                 </p>
             </div>
             <div class="screenshots__carousel">
                 <div class="screenshots__track">
                     <div class="screenshot-card">
-                        <img src="../content/image/eruy1h8m5gm5fyy31j3.jpeg" alt="Dashboard" class="screenshot-card__img" />
+                        <img src="../content/image/eruy1h8m5gm5fyy31j3.jpeg" alt="لوحة المعلومات" class="screenshot-card__img" />
                     </div>
                     <div class="screenshot-card">
-                        <img src="../content/image/w25g7l3phbv2t5i1jce.jpeg" alt="Grafici Salute" class="screenshot-card__img" />
+                        <img src="../content/image/w25g7l3phbv2t5i1jce.jpeg" alt="الرسوم البيانية الصحية" class="screenshot-card__img" />
                     </div>
                     <div class="screenshot-card">
-                        <img src="../content/image/8i3n38wxf0xh0ama4yc.jpeg" alt="Cronologia" class="screenshot-card__img" />
+                        <img src="../content/image/8i3n38wxf0xh0ama4yc.jpeg" alt="سجل التتبع" class="screenshot-card__img" />
                     </div>
                     <div class="screenshot-card">
-                        <img src="../content/image/u0ylt6tgfgceg8frl8t.jpeg" alt="Report IA" class="screenshot-card__img" />
+                        <img src="../content/image/u0ylt6tgfgceg8frl8t.jpeg" alt="تقارير AI" class="screenshot-card__img" />
                     </div>
                 </div>
             </div>
@@ -248,19 +264,19 @@
     <section id="pricing" class="pricing">
         <div class="pricing__container">
             <div class="pricing__header">
-                <span class="pricing__label">Prezzi</span>
-                <h2 class="pricing__title">Inizia gratis</h2>
+                <span class="pricing__label">الأسعار</span>
+                <h2 class="pricing__title">ابدأ مجانًا</h2>
                 <p class="pricing__description">
-                    Inizia il tuo percorso di salute oggi. Passa alla versione premium quando vuoi.
+                    ابدأ رحلتك الصحية اليوم. قم بالترقية في أي وقت للحصول على ميزات متقدمة.
                 </p>
             </div>
             <div class="pricing__cards pricing__cards--three">
                 <div class="pricing-card">
                     <div class="pricing-card__header">
-                        <h3 class="pricing-card__name">Gratuito</h3>
+                        <h3 class="pricing-card__name">مجاني</h3>
                         <div class="pricing-card__price">
                             <span class="pricing-card__amount">$0</span>
-                            <span class="pricing-card__period">per sempre</span>
+                            <span class="pricing-card__period">للأبد</span>
                         </div>
                     </div>
                     <ul class="pricing-card__features">
@@ -268,126 +284,76 @@
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                                 <polyline points="20 6 9 17 4 12"/>
                             </svg>
-                            Registrazione pressione e frequenza cardiaca
+                            تسجيل ضغط الدم ومعدل ضربات القلب
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                                 <polyline points="20 6 9 17 4 12"/>
                             </svg>
-                            Cronologia con grafici base
+                            السجل مع الرسوم البيانية الأساسية
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                                 <polyline points="20 6 9 17 4 12"/>
                             </svg>
-                            Sync HealthKit e Apple Watch
+                            مزامنة HealthKit وApple Watch
                         </li>
                     </ul>
                     <a href="https://apps.apple.com/us/app/pressure-control-tracker/id6738280822" class="pricing-card__btn pricing-card__btn--secondary" target="_blank">
-                        Inizia
+                        ابدأ الآن
                     </a>
                 </div>
                 <div class="pricing-card pricing-card--featured">
-                    <div class="pricing-card__badge">Miglior Valore</div>
+                    <div class="pricing-card__badge">الأفضل قيمة</div>
                     <div class="pricing-card__header">
-                        <h3 class="pricing-card__name">Annuale</h3>
+                        <h3 class="pricing-card__name">سنوي</h3>
                         <div class="pricing-card__price">
                             <span class="pricing-card__amount">$14.99</span>
-                            <span class="pricing-card__period">/anno</span>
+                            <span class="pricing-card__period">/سنة</span>
                         </div>
-                        <span class="pricing-card__savings">Risparmia 37%</span>
+                        <span class="pricing-card__savings">وفّر 37%</span>
                     </div>
                     <ul class="pricing-card__features">
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            Tutto del Gratuito
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            Report salute IA settimanali
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            Rilevamento pattern e avvisi
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            Esportazione PDF e CSV
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            Analisi stress e sonno
-                        </li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>كل شيء في المجاني</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>تقارير صحية أسبوعية بالذكاء الاصطناعي</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>كشف الأنماط والتنبيهات</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>تصدير PDF وCSV</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>تحليلات التوتر والنوم</li>
                     </ul>
                     <a href="https://apps.apple.com/us/app/pressure-control-tracker/id6738280822" class="pricing-card__btn pricing-card__btn--primary" target="_blank">
-                        Abbonati Annuale
+                        اشترك سنويًا
                     </a>
                 </div>
                 <div class="pricing-card">
                     <div class="pricing-card__header">
-                        <h3 class="pricing-card__name">Mensile</h3>
+                        <h3 class="pricing-card__name">شهري</h3>
                         <div class="pricing-card__price">
                             <span class="pricing-card__amount">$1.99</span>
-                            <span class="pricing-card__period">/mese</span>
+                            <span class="pricing-card__period">/شهر</span>
                         </div>
                     </div>
                     <ul class="pricing-card__features">
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            Tutto del Gratuito
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            Report salute IA settimanali
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            Rilevamento pattern e avvisi
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            Esportazione PDF e CSV
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            Analisi stress e sonno
-                        </li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>كل شيء في المجاني</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>تقارير صحية أسبوعية بالذكاء الاصطناعي</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>كشف الأنماط والتنبيهات</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>تصدير PDF وCSV</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>تحليلات التوتر والنوم</li>
                     </ul>
                     <a href="https://apps.apple.com/us/app/pressure-control-tracker/id6738280822" class="pricing-card__btn pricing-card__btn--secondary" target="_blank">
-                        Abbonati Mensile
+                        اشترك شهريًا
                     </a>
                 </div>
             </div>
             <div class="pricing__lifetime">
                 <div class="pricing__lifetime-content">
                     <div class="pricing__lifetime-info">
-                        <h3 class="pricing__lifetime-title">Accesso a Vita</h3>
-                        <p class="pricing__lifetime-text">Pagamento unico, tuo per sempre. Nessun costo ricorrente.</p>
+                        <h3 class="pricing__lifetime-title">وصول مدى الحياة</h3>
+                        <p class="pricing__lifetime-text">دفعة واحدة، لك إلى الأبد. بدون رسوم متكررة.</p>
                     </div>
                     <div class="pricing__lifetime-price">
                         <span class="pricing__lifetime-amount">$49.99</span>
                         <a href="https://apps.apple.com/us/app/pressure-control-tracker/id6738280822" class="btn btn--primary" target="_blank">
-                            Ottieni a Vita
+                            احصل على مدى الحياة
                         </a>
                     </div>
                 </div>
@@ -398,15 +364,15 @@
     <!-- Languages Section -->
     <section class="languages">
         <div class="languages__container">
-            <h3 class="languages__title">Disponibile in 12 lingue</h3>
+            <h3 class="languages__title">متوفر بـ 12 لغة</h3>
             <div class="languages__list">
                 <a href="../index.html" class="languages__item">English</a>
-                <a href="../ar/index.html" class="languages__item">العربية</a>
+                <a href="../ar/index.html" class="languages__item languages__item--active">العربية</a>
                 <a href="../zh/index.html" class="languages__item">简体中文</a>
                 <a href="../zh-TW/index.html" class="languages__item">繁體中文</a>
                 <a href="../fr/index.html" class="languages__item">Français</a>
                 <a href="../de/index.html" class="languages__item">Deutsch</a>
-                <a href="../it/index.html" class="languages__item languages__item--active">Italiano</a>
+                <a href="../it/index.html" class="languages__item">Italiano</a>
                 <a href="../ja/index.html" class="languages__item">日本語</a>
                 <a href="../ko/index.html" class="languages__item">한국어</a>
                 <a href="../pt/index.html" class="languages__item">Português</a>
@@ -420,13 +386,13 @@
     <section class="cta">
         <div class="cta__container">
             <div class="cta__content">
-                <h2 class="cta__title">Inizia oggi il tuo percorso di salute</h2>
-                <p class="cta__text">Scarica ora e fai il primo passo verso una migliore gestione della tua salute.</p>
+                <h2 class="cta__title">ابدأ رحلتك الصحية اليوم</h2>
+                <p class="cta__text">قم بالتنزيل الآن واتخذ الخطوة الأولى نحو إدارة صحية أفضل.</p>
                 <a href="https://apps.apple.com/us/app/pressure-control-tracker/id6738280822" class="btn btn--primary btn--large" target="_blank">
                     <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
                     </svg>
-                    Scarica Gratis
+                    تنزيل مجانًا
                 </a>
             </div>
         </div>
@@ -439,35 +405,35 @@
                 <div class="footer__brand">
                     <img src="../content/image/xjf2048aaxk5vkiasgrz.jpg" alt="Pressure Control" class="footer__logo" />
                     <span class="footer__brand-name">Pressure Control</span>
-                    <p class="footer__tagline">La tua salute, semplificata.</p>
+                    <p class="footer__tagline">صحتك، مبسّطة.</p>
                 </div>
                 <div class="footer__links-group">
-                    <h4 class="footer__links-title">Prodotto</h4>
-                    <a href="#features" class="footer__link">Funzionalita</a>
-                    <a href="#pricing" class="footer__link">Prezzi</a>
-                    <a href="#screenshots" class="footer__link">Screenshot</a>
+                    <h4 class="footer__links-title">المنتج</h4>
+                    <a href="#features" class="footer__link">الميزات</a>
+                    <a href="#pricing" class="footer__link">الأسعار</a>
+                    <a href="#screenshots" class="footer__link">لقطات الشاشة</a>
                 </div>
                 <div class="footer__links-group">
-                    <h4 class="footer__links-title">Legale</h4>
-                    <a href="https://litoarias.github.io/pressurecontrol-privacy" class="footer__link">Privacy Policy</a>
-                    <a href="#" class="footer__link">Termini di Servizio</a>
+                    <h4 class="footer__links-title">قانوني</h4>
+                    <a href="https://litoarias.github.io/pressurecontrol-privacy" class="footer__link">سياسة الخصوصية</a>
+                    <a href="#" class="footer__link">شروط الخدمة</a>
                 </div>
                 <div class="footer__links-group">
-                    <h4 class="footer__links-title">Supporto</h4>
-                    <a href="../support/index.html" class="footer__link">Centro assistenza</a>
-                    <a href="mailto:pressurecontrol.app@gmail.com" class="footer__link">Contattaci</a>
+                    <h4 class="footer__links-title">الدعم</h4>
+                    <a href="../support/index.html" class="footer__link">مركز المساعدة</a>
+                    <a href="mailto:pressurecontrol.app@gmail.com" class="footer__link">تواصل معنا</a>
                 </div>
             </div>
             <div class="footer__bottom">
                 <p class="footer__copyright">
-                    &copy; <script>document.write(new Date().getFullYear())</script><noscript>2025</noscript> Pressure Control. Tutti i diritti riservati.
+                    &copy; <script>document.write(new Date().getFullYear())</script><noscript>2025</noscript> Pressure Control. جميع الحقوق محفوظة.
                 </p>
             </div>
         </div>
     </footer>
 
     <script>
-        localStorage.setItem('pc_lang', 'it');
+        localStorage.setItem('pc_lang', 'ar');
 
         const mobileToggle = document.querySelector('.nav__mobile-toggle');
         const navLinks = document.querySelector('.nav__links');
@@ -475,34 +441,25 @@
             navLinks?.classList.toggle('nav__links--active');
             mobileToggle.classList.toggle('nav__mobile-toggle--active');
         });
+
         const langBtn = document.querySelector('.nav__lang-btn');
         const langDropdown = document.querySelector('.nav__lang-dropdown');
-        langBtn?.addEventListener('click', () => {
-            langDropdown?.classList.toggle('nav__lang-dropdown--active');
-        });
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.nav__lang')) {
-                langDropdown?.classList.remove('nav__lang-dropdown--active');
-            }
-        });
-        const getLanguageFromHref = (href) => {
-            const absolute = new URL(href, window.location.href);
-            const segments = absolute.pathname.split('/').filter(Boolean);
-            const last = segments[segments.length - 1] || '';
-            if (last === 'index.html' && segments.length > 1) {
-                return segments[segments.length - 2];
-            }
-            if (['es', 'fr', 'de', 'it', 'ja', 'zh', 'ar', 'zh-TW', 'ko', 'pt', 'ru'].includes(last)) {
-                return last;
-            }
-            return 'en';
-        };
+        langBtn?.addEventListener('click', () => { langDropdown?.classList.toggle('nav__lang-dropdown--active'); });
+        document.addEventListener('click', (e) => { if (!e.target.closest('.nav__lang')) langDropdown?.classList.remove('nav__lang-dropdown--active'); });
+
         document.querySelectorAll('.nav__lang-option, .languages__item').forEach((link) => {
             link.addEventListener('click', () => {
-                const lang = getLanguageFromHref(link.getAttribute('href') || '../index.html');
+                const href = link.getAttribute('href') || '../index.html';
+                const abs = new URL(href, window.location.href);
+                const segments = abs.pathname.split('/').filter(Boolean);
+                const last = segments[segments.length - 1] || '';
+                let lang = 'en';
+                if (last === 'index.html' && segments.length > 1) lang = segments[segments.length - 2];
+                else if (['es','fr','de','it','ja','zh','ar','zh-TW','ko','pt','ru'].includes(last)) lang = last;
                 localStorage.setItem('pc_lang', lang);
             });
         });
+
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -511,24 +468,20 @@
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     navLinks?.classList.remove('nav__links--active');
                     mobileToggle?.classList.remove('nav__mobile-toggle--active');
+                    langDropdown?.classList.remove('nav__lang-dropdown--active');
                 }
             });
         });
+
         const nav = document.querySelector('.nav');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                nav?.classList.add('nav--scrolled');
-            } else {
-                nav?.classList.remove('nav--scrolled');
-            }
+            nav?.classList.toggle('nav--scrolled', window.scrollY > 50);
         });
-        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) { entry.target.classList.add('animate-in'); }
-            });
-        }, observerOptions);
-        document.querySelectorAll('.feature-card, .pricing-card, .screenshot-card').forEach(el => { observer.observe(el); });
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('animate-in'); });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        document.querySelectorAll('.feature-card, .pricing-card, .screenshot-card').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
