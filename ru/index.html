@@ -49,7 +49,7 @@
     <nav class="nav">
         <div class="nav__container">
             <a href="./index.html" class="nav__logo">
-                <img src="../content/image/xjf2048aaxk5vkiasgrz.jpg" alt="Pressure Control" class="nav__logo-img" />
+                <img src="../content/image/xjf2048aaxk5vkiasgrz.jpg" alt="Pressure Control" class="nav__logo-img" data-itunes="icon" />
                 <span class="nav__logo-text">Pressure Control</span>
             </a>
             <div class="nav__links">
@@ -115,18 +115,34 @@
                     </a>
                     <a href="#features" class="btn btn--secondary">Подробнее</a>
                 </div>
+                <div class="hero__meta" style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:10px;opacity:0.5;font-size:0.72rem;">
+                    <span data-itunes="age-rating" style="display:none;border:1px solid currentColor;border-radius:4px;padding:1px 6px;font-weight:700;"></span>
+                    <span data-itunes="size" style="display:none;"></span>
+                    <span data-itunes="price" style="display:none;"></span>
+                    <span data-itunes="update-date" style="display:none;"></span>
+                </div>
                 <div class="hero__stats">
-                    <div class="hero__stat"><span class="hero__stat-value">5.0</span><span class="hero__stat-label">Рейтинг App Store</span></div>
+                    <div class="hero__stat"><span class="hero__stat-value" data-itunes="rating">5.0</span><span class="hero__stat-label">Рейтинг App Store</span></div>
                     <div class="hero__stat-divider"></div>
-                    <div class="hero__stat"><span class="hero__stat-value">12</span><span class="hero__stat-label">Языков</span></div>
+                    <div class="hero__stat"><span class="hero__stat-value" data-itunes="languages">12</span><span class="hero__stat-label">Языков</span></div>
                     <div class="hero__stat-divider"></div>
-                    <div class="hero__stat"><span class="hero__stat-value">v1.11</span><span class="hero__stat-label">Последняя версия</span></div>
+                    <div class="hero__stat"><span class="hero__stat-value" data-itunes="version">v1.11</span><span class="hero__stat-label">Последняя версия</span>                    <div class="hero__stat-divider" id="itunes-size-divider" style="display:none"></div>
+                    <div class="hero__stat" id="itunes-size-stat" style="display:none">
+                        <span class="hero__stat-value" data-itunes="size">—</span>
+                        <span class="hero__stat-label">Size</span>
+                    </div>
+                    <div class="hero__stat-divider" id="itunes-min-os-divider" style="display:none"></div>
+                    <div class="hero__stat" id="itunes-min-os-stat" style="display:none">
+                        <span class="hero__stat-value" data-itunes="min-os">—</span>
+                        <span class="hero__stat-label">Requires</span>
+                    </div>
+</div>
                 </div>
             </div>
             <div class="hero__visual">
                 <div class="hero__phone">
                     <div class="hero__phone-frame">
-                        <img src="../content/image/eruy1h8m5gm5fyy31j3.jpeg" alt="Скриншот Pressure Control" class="hero__phone-screen" />
+                        <img src="../content/image/eruy1h8m5gm5fyy31j3.jpeg" alt="Скриншот Pressure Control" class="hero__phone-screen" data-itunes="screenshot" data-slot="0" />
                     </div>
                 </div>
             </div>
@@ -160,10 +176,10 @@
             </div>
             <div class="screenshots__carousel">
                 <div class="screenshots__track">
-                    <div class="screenshot-card"><img src="../content/image/eruy1h8m5gm5fyy31j3.jpeg" alt="Панель управления" class="screenshot-card__img" /></div>
-                    <div class="screenshot-card"><img src="../content/image/w25g7l3phbv2t5i1jce.jpeg" alt="Графики здоровья" class="screenshot-card__img" /></div>
-                    <div class="screenshot-card"><img src="../content/image/8i3n38wxf0xh0ama4yc.jpeg" alt="История" class="screenshot-card__img" /></div>
-                    <div class="screenshot-card"><img src="../content/image/u0ylt6tgfgceg8frl8t.jpeg" alt="Отчёты ИИ" class="screenshot-card__img" /></div>
+                    <div class="screenshot-card"><img src="../content/image/eruy1h8m5gm5fyy31j3.jpeg" alt="Панель управления" class="screenshot-card__img" data-itunes="screenshot" data-slot="0" /></div>
+                    <div class="screenshot-card"><img src="../content/image/w25g7l3phbv2t5i1jce.jpeg" alt="Графики здоровья" class="screenshot-card__img" data-itunes="screenshot" data-slot="1" /></div>
+                    <div class="screenshot-card"><img src="../content/image/8i3n38wxf0xh0ama4yc.jpeg" alt="История" class="screenshot-card__img" data-itunes="screenshot" data-slot="2" /></div>
+                    <div class="screenshot-card"><img src="../content/image/u0ylt6tgfgceg8frl8t.jpeg" alt="Отчёты ИИ" class="screenshot-card__img" data-itunes="screenshot" data-slot="3" /></div>
                 </div>
             </div>
         </div>
@@ -255,6 +271,17 @@
         </div>
     </section>
 
+    <!-- What's New (populated from iTunes API when available) -->
+    <section id="whats-new" style="display:none;padding:0 20px 60px;">
+        <div style="max-width:720px;margin:0 auto;background:rgba(128,128,128,0.06);border-radius:16px;border:1px solid rgba(128,128,128,0.12);padding:28px 32px;">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap;">
+                <span style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.4;">WHAT'S NEW</span>
+                <span data-itunes="version" style="font-family:monospace;font-size:0.78rem;opacity:0.35;"></span>
+                <span data-itunes="update-date" style="font-size:0.78rem;opacity:0.35;margin-left:auto;"></span>
+            </div>
+            <p data-itunes="release-notes" style="margin:0;line-height:1.75;opacity:0.75;white-space:pre-line;font-size:0.9rem;"></p>
+        </div>
+    </section>
     <section class="cta">
         <div class="cta__container">
             <div class="cta__content">
@@ -272,7 +299,7 @@
         <div class="footer__container">
             <div class="footer__top">
                 <div class="footer__brand">
-                    <img src="../content/image/xjf2048aaxk5vkiasgrz.jpg" alt="Pressure Control" class="footer__logo" />
+                    <img src="../content/image/xjf2048aaxk5vkiasgrz.jpg" alt="Pressure Control" class="footer__logo" data-itunes="icon" />
                     <span class="footer__brand-name">Pressure Control</span>
                     <p class="footer__tagline">Ваше здоровье, упрощённо.</p>
                 </div>
@@ -313,6 +340,108 @@
         window.addEventListener('scroll', () => { nav?.classList.toggle('nav--scrolled', window.scrollY > 50); });
         const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('animate-in'); }); }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
         document.querySelectorAll('.feature-card, .pricing-card, .screenshot-card').forEach(el => observer.observe(el));
+
+        // iTunes App Store data
+        (function() {
+            fetch('https://itunes.apple.com/lookup?id=6738280822')
+                .then(function(r) { return r.json(); })
+                .then(function(data) {
+                    var app = data.results && data.results[0];
+                    if (!app) return;
+
+                    function setText(attr, val) {
+                        if (val == null) return;
+                        document.querySelectorAll('[data-itunes="' + attr + '"]').forEach(function(el) {
+                            el.textContent = val;
+                        });
+                    }
+                    function showAttr(attr) {
+                        document.querySelectorAll('[data-itunes="' + attr + '"]').forEach(function(el) {
+                            el.style.display = '';
+                        });
+                    }
+                    function fmtDate(str) {
+                        if (!str) return null;
+                        var d = new Date(str);
+                        var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+                        return 'Updated ' + months[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
+                    }
+
+                    // Rating
+                    if (app.averageUserRating && app.userRatingCount > 0) {
+                        setText('rating', app.averageUserRating.toFixed(1));
+                    }
+                    // Version
+                    if (app.version) {
+                        setText('version', 'v' + app.version);
+                    }
+                    // Min OS requirement
+                    if (app.minimumOsVersion) {
+                        setText('min-os', 'iOS ' + app.minimumOsVersion + '+');
+                        var mos = document.getElementById('itunes-min-os-stat');
+                        var mod = document.getElementById('itunes-min-os-divider');
+                        if (mos) mos.style.display = '';
+                        if (mod) mod.style.display = '';
+                    }
+                    // Languages count
+                    if (app.languageCodesISO2A && app.languageCodesISO2A.length > 0) {
+                        setText('languages', String(app.languageCodesISO2A.length));
+                    }
+                    // Icon
+                    if (app.artworkUrl512) {
+                        document.querySelectorAll('[data-itunes="icon"]').forEach(function(el) {
+                            el.src = app.artworkUrl512;
+                        });
+                    }
+                    // Screenshots
+                    var urls = app.screenshotUrls;
+                    if (urls && urls.length > 0) {
+                        document.querySelectorAll('[data-itunes="screenshot"]').forEach(function(el) {
+                            var slot = parseInt(el.dataset.slot || '0', 10);
+                            if (urls[slot]) el.src = urls[slot];
+                        });
+                    }
+                    // Age rating
+                    if (app.contentAdvisoryRating) {
+                        setText('age-rating', app.contentAdvisoryRating);
+                        showAttr('age-rating');
+                    }
+                    // File size
+                    if (app.fileSizeBytes) {
+                        var mb = Math.round(parseInt(app.fileSizeBytes) / 1048576);
+                        setText('size', mb + ' MB');
+                        var ss = document.getElementById('itunes-size-stat');
+                        var sd = document.getElementById('itunes-size-divider');
+                        if (ss) ss.style.display = '';
+                        if (sd) sd.style.display = '';
+                        showAttr('size');
+                    }
+                    // Formatted price
+                    if (app.formattedPrice) {
+                        setText('price', app.formattedPrice);
+                        showAttr('price');
+                    }
+                    // Update date
+                    var upd = fmtDate(app.currentVersionReleaseDate);
+                    if (upd) {
+                        setText('update-date', upd);
+                        showAttr('update-date');
+                    }
+                    // Release notes
+                    if (app.releaseNotes) {
+                        setText('release-notes', app.releaseNotes);
+                        var wn = document.getElementById('whats-new');
+                        if (wn) wn.style.display = '';
+                    }
+                    // Store URL
+                    if (app.trackViewUrl) {
+                        document.querySelectorAll('a[href*="apps.apple.com"]').forEach(function(el) {
+                            el.href = app.trackViewUrl;
+                        });
+                    }
+                })
+                .catch(function() {});
+        })();
     </script>
 </body>
 </html>
