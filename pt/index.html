@@ -9,7 +9,7 @@
     <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
 
-    <link rel="icon" href="../assets/favicon.png" />
+    <link rel="icon" href="../content/image/xjf2048aaxk5vkiasgrz.jpg" />
 
     <meta property="og:title" content="Pressure Control - Monitoramento Inteligente de Pressão Arterial" />
     <meta property="og:description" content="Monitore pressão arterial, estresse e sono com integração Apple Health e Apple Watch." />
@@ -343,102 +343,123 @@
 
         // iTunes App Store data
         (function() {
-            fetch('https://itunes.apple.com/lookup?id=6738280822')
+            function detectCountry() {
+                var lang = (document.documentElement.lang || navigator.language || 'en').toLowerCase();
+                if (lang.startsWith('zh-tw') || lang.startsWith('zh-hant')) return 'tw';
+                if (lang.startsWith('pt-br')) return 'br';
+                var map = {es:'es',fr:'fr',de:'de',it:'it',ja:'jp',ko:'kr',ru:'ru',ar:'sa',zh:'cn',pt:'br'};
+                return map[lang.split('-')[0]] || 'us';
+            }
+            var country = detectCountry();
+
+            function process(app) {
+                if (!app) return;
+
+                function setText(attr, val) {
+                    if (val == null) return;
+                    document.querySelectorAll('[data-itunes="' + attr + '"]').forEach(function(el) {
+                        el.textContent = val;
+                    });
+                }
+                function showAttr(attr) {
+                    document.querySelectorAll('[data-itunes="' + attr + '"]').forEach(function(el) {
+                        el.style.display = '';
+                    });
+                }
+                function fmtDate(str) {
+                    if (!str) return null;
+                    var d = new Date(str);
+                    var m = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+                    return 'Updated ' + m[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
+                }
+
+                // Rating
+                if (app.averageUserRating && app.userRatingCount > 0) {
+                    setText('rating', app.averageUserRating.toFixed(1));
+                    var rs = document.getElementById('itunes-rating-stat');
+                    var rd = document.getElementById('itunes-rating-divider');
+                    if (rs) rs.style.display = '';
+                    if (rd) rd.style.display = '';
+                }
+                // Version
+                if (app.version) { setText('version', 'v' + app.version); }
+                // Min OS
+                if (app.minimumOsVersion) { setText('min-os', 'iOS ' + app.minimumOsVersion + '+'); }
+                // Languages count
+                if (app.languageCodesISO2A && app.languageCodesISO2A.length > 0) {
+                    setText('languages', String(app.languageCodesISO2A.length));
+                }
+                // Icon
+                if (app.artworkUrl512) {
+                    document.querySelectorAll('[data-itunes="icon"]').forEach(function(el) {
+                        el.src = app.artworkUrl512;
+                        el.style.display = 'block';
+                    });
+                    // Favicon
+                    var iconLink = document.querySelector("link[rel*='icon']");
+                    if (!iconLink) { iconLink = document.createElement('link'); iconLink.rel = 'icon'; document.head.appendChild(iconLink); }
+                    iconLink.href = app.artworkUrl512;
+                }
+                // Screenshots
+                var urls = app.screenshotUrls;
+                if (urls && urls.length > 0) {
+                    document.querySelectorAll('[data-itunes="screenshot"]').forEach(function(el) {
+                        var slot = parseInt(el.dataset.slot || '0', 10);
+                        if (urls[slot]) el.src = urls[slot];
+                    });
+                }
+                // Age rating
+                if (app.contentAdvisoryRating) {
+                    setText('age-rating', app.contentAdvisoryRating);
+                    showAttr('age-rating');
+                }
+                // File size
+                if (app.fileSizeBytes) {
+                    var mb = Math.round(parseInt(app.fileSizeBytes) / 1048576);
+                    setText('size', mb + ' MB');
+                    var ss = document.getElementById('itunes-size-stat');
+                    var sd = document.getElementById('itunes-size-divider');
+                    if (ss) ss.style.display = '';
+                    if (sd) sd.style.display = '';
+                    showAttr('size');
+                }
+                // Min OS show
+                if (app.minimumOsVersion) {
+                    var mos = document.getElementById('itunes-min-os-stat');
+                    var mod = document.getElementById('itunes-min-os-divider');
+                    if (mos) mos.style.display = '';
+                    if (mod) mod.style.display = '';
+                }
+                // Formatted price
+                if (app.formattedPrice) { setText('price', app.formattedPrice); showAttr('price'); }
+                // Update date
+                var upd = fmtDate(app.currentVersionReleaseDate);
+                if (upd) { setText('update-date', upd); showAttr('update-date'); }
+                // Release notes
+                if (app.releaseNotes) {
+                    setText('release-notes', app.releaseNotes);
+                    var wn = document.getElementById('whats-new');
+                    if (wn) wn.style.display = '';
+                }
+                // Store URL
+                if (app.trackViewUrl) {
+                    document.querySelectorAll('a[href*="apps.apple.com"]').forEach(function(el) {
+                        el.href = app.trackViewUrl;
+                    });
+                }
+            }
+
+            var BASE = 'https://itunes.apple.com/lookup?id=6738280822&country=';
+            fetch(BASE + country)
                 .then(function(r) { return r.json(); })
                 .then(function(data) {
                     var app = data.results && data.results[0];
-                    if (!app) return;
-
-                    function setText(attr, val) {
-                        if (val == null) return;
-                        document.querySelectorAll('[data-itunes="' + attr + '"]').forEach(function(el) {
-                            el.textContent = val;
-                        });
-                    }
-                    function showAttr(attr) {
-                        document.querySelectorAll('[data-itunes="' + attr + '"]').forEach(function(el) {
-                            el.style.display = '';
-                        });
-                    }
-                    function fmtDate(str) {
-                        if (!str) return null;
-                        var d = new Date(str);
-                        var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-                        return 'Updated ' + months[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
-                    }
-
-                    // Rating
-                    if (app.averageUserRating && app.userRatingCount > 0) {
-                        setText('rating', app.averageUserRating.toFixed(1));
-                    }
-                    // Version
-                    if (app.version) {
-                        setText('version', 'v' + app.version);
-                    }
-                    // Min OS requirement
-                    if (app.minimumOsVersion) {
-                        setText('min-os', 'iOS ' + app.minimumOsVersion + '+');
-                        var mos = document.getElementById('itunes-min-os-stat');
-                        var mod = document.getElementById('itunes-min-os-divider');
-                        if (mos) mos.style.display = '';
-                        if (mod) mod.style.display = '';
-                    }
-                    // Languages count
-                    if (app.languageCodesISO2A && app.languageCodesISO2A.length > 0) {
-                        setText('languages', String(app.languageCodesISO2A.length));
-                    }
-                    // Icon
-                    if (app.artworkUrl512) {
-                        document.querySelectorAll('[data-itunes="icon"]').forEach(function(el) {
-                            el.src = app.artworkUrl512;
-                        });
-                    }
-                    // Screenshots
-                    var urls = app.screenshotUrls;
-                    if (urls && urls.length > 0) {
-                        document.querySelectorAll('[data-itunes="screenshot"]').forEach(function(el) {
-                            var slot = parseInt(el.dataset.slot || '0', 10);
-                            if (urls[slot]) el.src = urls[slot];
-                        });
-                    }
-                    // Age rating
-                    if (app.contentAdvisoryRating) {
-                        setText('age-rating', app.contentAdvisoryRating);
-                        showAttr('age-rating');
-                    }
-                    // File size
-                    if (app.fileSizeBytes) {
-                        var mb = Math.round(parseInt(app.fileSizeBytes) / 1048576);
-                        setText('size', mb + ' MB');
-                        var ss = document.getElementById('itunes-size-stat');
-                        var sd = document.getElementById('itunes-size-divider');
-                        if (ss) ss.style.display = '';
-                        if (sd) sd.style.display = '';
-                        showAttr('size');
-                    }
-                    // Formatted price
-                    if (app.formattedPrice) {
-                        setText('price', app.formattedPrice);
-                        showAttr('price');
-                    }
-                    // Update date
-                    var upd = fmtDate(app.currentVersionReleaseDate);
-                    if (upd) {
-                        setText('update-date', upd);
-                        showAttr('update-date');
-                    }
-                    // Release notes
-                    if (app.releaseNotes) {
-                        setText('release-notes', app.releaseNotes);
-                        var wn = document.getElementById('whats-new');
-                        if (wn) wn.style.display = '';
-                    }
-                    // Store URL
-                    if (app.trackViewUrl) {
-                        document.querySelectorAll('a[href*="apps.apple.com"]').forEach(function(el) {
-                            el.href = app.trackViewUrl;
-                        });
-                    }
+                    if (app) { process(app); return; }
+                    if (country === 'us') return;
+                    // Fallback to US storefront
+                    return fetch(BASE + 'us')
+                        .then(function(r) { return r.json(); })
+                        .then(function(d) { process(d.results && d.results[0]); });
                 })
                 .catch(function() {});
         })();
