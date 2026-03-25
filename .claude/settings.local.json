@@ -1,8 +1,1 @@
-{
-  "permissions": {
-    "allow": [
-      "WebFetch(domain:litoarias.github.io)",
-      "Bash(sed:*)"
-    ]
-  }
-}
+{}
