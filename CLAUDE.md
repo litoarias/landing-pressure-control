@@ -7,3 +7,9 @@
 
 ## Deploy
 GitHub Pages at `litoarias.github.io/landing-pressure-control/`
+
+
+## Git
+- Author: Hipolito Arias <lito.arias.cervero@gmail.com>
+- Never add Co-Authored-By lines mentioning Claude in commit messages
+
