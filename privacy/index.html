@@ -375,11 +375,12 @@
                 <li><a href="#healthkit"><span class="policy-toc__num">2</span>HealthKit &amp; Health Data</a></li>
                 <li><a href="#openai"><span class="policy-toc__num">3</span>AI-Powered Insights (OpenAI)</a></li>
                 <li><a href="#analytics"><span class="policy-toc__num">4</span>Analytics &amp; Crash Reporting</a></li>
-                <li><a href="#sharing"><span class="policy-toc__num">5</span>Data Sharing</a></li>
-                <li><a href="#retention"><span class="policy-toc__num">6</span>Data Retention &amp; Security</a></li>
-                <li><a href="#children"><span class="policy-toc__num">7</span>Children's Privacy</a></li>
-                <li><a href="#rights"><span class="policy-toc__num">8</span>Your Rights</a></li>
-                <li><a href="#contact"><span class="policy-toc__num">9</span>Contact Us</a></li>
+                <li><a href="#advertising"><span class="policy-toc__num">5</span>Advertising &amp; App Tracking Transparency</a></li>
+                <li><a href="#sharing"><span class="policy-toc__num">6</span>Data Sharing</a></li>
+                <li><a href="#retention"><span class="policy-toc__num">7</span>Data Retention &amp; Security</a></li>
+                <li><a href="#children"><span class="policy-toc__num">8</span>Children's Privacy</a></li>
+                <li><a href="#rights"><span class="policy-toc__num">9</span>Your Rights</a></li>
+                <li><a href="#contact"><span class="policy-toc__num">10</span>Contact Us</a></li>
             </ul>
         </nav>
 
@@ -662,7 +663,36 @@
 
         <div class="policy-divider"></div>
 
-        <!-- 5. Sharing -->
+        <!-- 5. Advertising -->
+        <section class="policy-section" id="advertising">
+            <div class="policy-section__header">
+                <div class="policy-section__icon policy-section__icon--amber">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                        <path d="M8 21h8M12 17v4"/>
+                    </svg>
+                </div>
+                <h2 class="policy-section__title">5. Advertising &amp; App Tracking Transparency</h2>
+            </div>
+            <div class="policy-section__body">
+                <p>Pressure Control uses Google AdMob to display rewarded ads. Ads are only shown when you choose to use the PDF import feature. We request your permission through Apple's App Tracking Transparency (ATT) framework before serving personalized ads.</p>
+<ul>
+    <li><strong>If you allow tracking:</strong> AdMob may use your device's advertising identifier (IDFA) to serve personalized ads.</li>
+    <li><strong>If you deny tracking:</strong> AdMob will serve non-personalized (contextual) ads. Your data is not shared with third-party advertisers for targeting purposes.</li>
+</ul>
+<p>You can manage your ad preferences:</p>
+<ul>
+    <li><strong>Change ATT permission:</strong> Settings → Privacy &amp; Security → Tracking</li>
+    <li><strong>Reset Advertising ID:</strong> Settings → Privacy &amp; Security → Apple Advertising → Reset Advertising Identifier</li>
+    <li><strong>Limit Ad Tracking:</strong> Enabling "Limit Ad Tracking" prevents personalized ads.</li>
+</ul>
+<p>AdMob data practices are governed by the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a> and <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">Google Ads Policy</a>.</p>
+            </div>
+        </section>
+
+        <div class="policy-divider"></div>
+
+        <!-- 6. Sharing (renumbered from 5) -->
         <section class="policy-section" id="sharing">
             <div class="policy-section__header">
                 <div class="policy-section__icon policy-section__icon--emerald">
@@ -674,12 +704,12 @@
                         <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
                     </svg>
                 </div>
-                <h2 class="policy-section__title">5. Data Sharing</h2>
+                <h2 class="policy-section__title">6. Data Sharing</h2>
             </div>
             <div class="policy-section__body">
                 <p><strong>We do not sell your personal data.</strong> Data is shared only in the following limited circumstances:</p>
                 <ul>
-                    <li><strong>Service Providers</strong> — Firebase (Google) for crash reporting and analytics, and OpenAI only when you have explicitly enabled AI reports.</li>
+                    <li><strong>Service Providers</strong> — Firebase (Google) for crash reporting and analytics; Google AdMob for serving rewarded ads (only when using the PDF import feature); and OpenAI only when you have explicitly enabled AI reports.</li>
                     <li><strong>Legal Requirements</strong> — We may disclose information if required by applicable law, court order, or government regulation.</li>
                     <li><strong>Business Transfers</strong> — In the event of a merger or acquisition, your information may be transferred as part of that transaction.</li>
                     <li><strong>Your Consent</strong> — We may share data with third parties when you have explicitly authorized us to do so.</li>
@@ -698,10 +728,10 @@
                         <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
                     </svg>
                 </div>
-                <h2 class="policy-section__title">6. Data Retention &amp; Security</h2>
+                <h2 class="policy-section__title">7. Data Retention &amp; Security</h2>
             </div>
             <div class="policy-section__body">
-                <p>Your health data remains entirely on your device and within Apple's HealthKit ecosystem — we do not store it on our servers. Anonymized usage and crash data from Firebase is retained for up to 14 months, consistent with Google's default retention policies.</p>
+                <p>Your health data remains entirely on your device and within Apple's HealthKit ecosystem — we do not store it on our servers. Anonymized usage and crash data from Firebase is retained for up to 14 months, consistent with Google's default retention policies. Advertising data collected by Google AdMob is retained according to <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">Google's Ads policies</a>. You can reset your advertising identifier at any time in device settings.</p>
                 <p>We apply industry-standard security measures to protect all data we handle. However, no method of transmission over the Internet is 100% secure, and we cannot guarantee absolute security.</p>
             </div>
         </section>
@@ -719,7 +749,7 @@
                         <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
                     </svg>
                 </div>
-                <h2 class="policy-section__title">7. Children's Privacy</h2>
+                <h2 class="policy-section__title">8. Children's Privacy</h2>
             </div>
             <div class="policy-section__body">
                 <p>Pressure Control is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe we have inadvertently collected such data, please contact us immediately and we will promptly delete it.</p>
@@ -736,7 +766,7 @@
                         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                     </svg>
                 </div>
-                <h2 class="policy-section__title">8. Your Rights</h2>
+                <h2 class="policy-section__title">9. Your Rights</h2>
             </div>
             <div class="policy-section__body">
                 <p>Because we do not store personally identifiable data on our servers, your rights are exercised primarily through built-in controls in the app and in iOS:</p>
@@ -752,7 +782,7 @@
 
         <div class="policy-divider"></div>
 
-        <!-- 9. Contact -->
+        <!-- 10. Contact -->
         <section class="policy-section" id="contact">
             <div class="policy-section__header">
                 <div class="policy-section__icon policy-section__icon--emerald">
@@ -761,7 +791,7 @@
                         <polyline points="22,6 12,13 2,6"/>
                     </svg>
                 </div>
-                <h2 class="policy-section__title">9. Contact Us</h2>
+                <h2 class="policy-section__title">10. Contact Us</h2>
             </div>
             <div class="policy-section__body">
                 <p>If you have any questions or concerns about this Privacy Policy or our data practices, please use our support form or reach out directly:</p>
